@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Results from './resultspage';
+import Questions from './questions'
 
 const Home = () => (
   <div>
@@ -44,8 +45,9 @@ class Survey extends Component {
     return (
       <div>
         <p className="App-intro">
-          SurveyComponent - This is where the survey questions will go.
+          SurveyComponent.
         </p>
+         <Questions/>
          <BasicExample/>
       </div>
 

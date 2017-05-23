@@ -1,23 +1,43 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import Results from './resultspage'
+import Questions from './questions'
 
-class Component1 extends Component {
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+)
+
+const BasicExample = () => (
+  <Router>
+    <div>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/Results">Results</Link></li>
+      </ul>
+      <hr/>
+
+      <Route exact path="/" component={Home}/>
+      <Route path="/Results" component={Results}/>
+    </div>
+  </Router>
+)
+
+class Body extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Component1 - Guide to the best router personalized for YOU</h2>
-        </div>
+      <div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          BodyComponent.
         </p>
+         <Questions/>
+         <BasicExample/>
       </div>
+
     );
   }
 }
 
-export default Component1;
-
-
+export default Body;
