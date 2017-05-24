@@ -1,7 +1,8 @@
-import React from 'react'
 const {string} = React.PropTypes
 
-const ShowCard = React.createClass({
+import React, { Component } from 'react'
+
+class ShowCard extends Component {
   propTypes: {
     poster: string.isRequired,
     title: string.isRequired,
@@ -22,6 +23,6 @@ const ShowCard = React.createClass({
       </div>
     )
   }
-})
+}
 
 export default ShowCard

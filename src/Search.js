@@ -1,10 +1,11 @@
 // pulling in JSON file
 
-import React from 'react'
 import ShowCard from './ShowCard'
 import preload from '../public/data.json'
 
-const Search = React.createClass({
+import React, { Component } from 'react'
+
+class Search extends Component {
   render () {
     return (
       <div className='search'>
@@ -18,6 +19,6 @@ const Search = React.createClass({
       </div>
     )
   }
-})
+}
 
 export default Search

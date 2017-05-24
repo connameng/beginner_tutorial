@@ -1,28 +1,62 @@
 // 1 component for all my questions 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import * as Survey from 'survey-react/survey.react.min'
-// import { Survey } from 'survey-react/survey.react'
-Survey.Survey.cssType = "bootstrap"
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
-var surveyJSON = {pages:[{elements:[{type:"checkbox",choices:[{value:"1bdrm",text:"0-1 Bedroom"},{value:"2bdrm",text:"2+ Bedrooms"}],isRequired:true,name:"How many bedrooms do you have? "}],name:"page1"},{name:"page2"}]}
+class Questions extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			answer: "option1"
+		};
 
-const Questions = React.createClass({
-  render () {
-    return (
-      <p>Question 1
-		<div id="surveyContainer"></div>
-	</p>
-    )
-  }
-})
+		this.handleOptionChange = this.handleOptionChange.bind(this);
+	}
+	handleOptionChange(changeEvent) {
+		this.setState({
+			answer: changeEvent.target.value
+		});
+	}
 
-function sendDataToServer(survey) {
-    survey.sendResult('5b1e4994-6e92-4d2c-86e5-2f2ebb6af036');
-}
+	render () {
+		return (
+			<div className="container">
+				<div className="row">
+					<div className="col-sm-12">
+						<div className="radio">
+							<label>
+							<input type="radio" value="option1" checked={this.state.answer === 'option1'} onChange={this.handleOptionChange}/>
+								Option 1
+							</label>
+						</div>
+						<div className="radio">
+							<label>
+							<input type="radio" value="option2" checked={this.state.answer === 'option2'} onChange={this.handleOptionChange} />
+								Option 2
+							</label>
+						</div>
+						<div className="radio">
+							<label>
+							<input type="radio" value="option3" checked={this.state.answer === 'option3'} onChange={this.handleOptionChange} />
+								Option 3
+							</label>
+						</div>
+					</div>
+				</div>
+				<div className="row">
+					<button>
+						<Link to='/results' replace >
+							Continue
+						</Link>
+					</button>
+					<button>
+						<Link to={{ pathname: '/results', state: { answer: this.state.answer } }}>
+							props
+						</Link>
+					</button>
+				</div>
+			</div>
+			)
+		}
+	}
 
-ReactDOM.render(
-    <Survey.Survey json={ surveyJSON } onComplete={ sendDataToServer } />, document.getElementById("surveyContainer"));
-
-
-export default Questions
+	export default Questions
