@@ -1,47 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
-import Room_question from './room_question'
-// import Results from './resultspage'
+import {BrowserRouter as Router, Route } from 'react-router-dom'
+import Questions from './questions'
+import Results from './resultspage'
 
 // this should hold my state since it's the highest component that will use them. Both questions and results will use the state 
+
 class Body extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      someVar: ''
-    }
-    // name handleAnswers whatever 
-    this.handleAnswers = this.handleAnswers.bind(this)
-  }
-
-  handleAnswers(e) {
-    // prevents page from reloading 
-    e.preventDefault()
-    this.setState({
-      someVar: e.target.value
-    })
-  }
-
   render() {
-
     return (
-      <div style={{
-        float: 'left',
-        padding: '10px',
-        width: '45%',
-        background: '#f0f0f0'
-      }}>
-
-        {this.state.someVar}
-          <Room_question handleAnswers={this.handleAnswers}/>
-
+      <Router>
+        <div> 
+          <Route exact path="/*" component={Questions} />
+          <Results />
         </div>
+      </Router>
     );
   }
 }
 
 export default Body;
-
 // <Route path="/results" component={Results} />
 
 // import React, { Component } from 'react';

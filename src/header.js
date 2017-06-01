@@ -11,7 +11,7 @@ class Header extends Component {
           <h2>HeaderComponent - Best Wifi Router Guide</h2>
         </div>
         <p className="App-intro">
-          This quick survey will allow you to easily see which wifi router is right for you! Don't overpay.
+          header - This quick survey will allow you to easily see which wifi router is right for you! Don't overpay.
         </p>
       </div>
     );

@@ -1,28 +1,44 @@
-// 1 component for all my questions 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import * as Survey from 'survey-react/survey.react.min'
-// import { Survey } from 'survey-react/survey.react'
-Survey.Survey.cssType = "bootstrap"
 
-var surveyJSON = {pages:[{elements:[{type:"checkbox",choices:[{value:"1bdrm",text:"0-1 Bedroom"},{value:"2bdrm",text:"2+ Bedrooms"}],isRequired:true,name:"How many bedrooms do you have? "}],name:"page1"},{name:"page2"}]}
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
-const Questions = React.createClass({
-  render () {
-    return (
-      <p>Question 1
-		<div id="surveyContainer"></div>
-	</p>
-    )
-  }
-})
+class Questions extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			answer: "option1"
+		};
 
-function sendDataToServer(survey) {
-    survey.sendResult('5b1e4994-6e92-4d2c-86e5-2f2ebb6af036');
-}
+		this.handleOptionChange = this.handleOptionChange.bind(this);
+	}
+	handleOptionChange(changeEvent) {
+		this.setState({
+			answer: changeEvent.target.value
+		});
+	}
 
-ReactDOM.render(
-    <Survey.Survey json={ surveyJSON } onComplete={ sendDataToServer } />, document.getElementById("surveyContainer"));
+// questions
+	render () {
+		return (
+			<div className="container">
+				<Room_Question />
 
+				
+				<div className="row">
+					<button>
+						<Link to='/results' replace >
+							Filtered results
+						</Link>
+					</button>
+					<button>
+						<Link to={{ pathname: '/results', state: { answer: this.state.answer } }}>
+							Go back
+						</Link>
+					</button>
+				</div>
+			</div>
+			)
+		}
+	}
 
-export default Questions
+	export default Questions

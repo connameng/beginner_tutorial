@@ -1,8 +1,9 @@
 
 import React, { Component } from 'react'
 import Header from './header'
-{/* import Body from './body' and import Search.js */}
-import Search from './Search'
+{/* import Search from './Search' and import Search.js */}
+import Body from './body'
+import Results from './resultspage'
 import Footer from './footer'
 
 class App extends Component {
@@ -10,8 +11,9 @@ class App extends Component {
     return (
       <div>  
       <Header/>
-      <Search/>
-     {/* while i'm playing around with JSON loader} <Body/> */}
+      <Body/>
+     {/* while i'm playing around with JSON loader} <Search/> */}
+      <Results />
       <Footer/>
      </div>
     );
