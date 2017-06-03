@@ -7,17 +7,23 @@ class Results extends Component {
     return (
       <div className='results' style={{ flex: 1, padding: '10px' }}>
         <div>
-          {preload.routers.map((show) => {
-            return (
-             <ShowCard model={show.model} antenas={show.antenas} frequency={show.frequency} />
-            )
-          })}
+          {preload.routers.map(show => <ShowCard key={show.model} model={show.model} antenas={show.antenas} frequency={show.frequency} />)}
         </div>
       </div>
     )
   }
 }
 
+{/* <div>
+          {preload.shows
+            .filter(
+              show =>
+                `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0
+            )
+         
+         Behind key i can put {...show} to pull everything 
+
+  */}
 
 // class Results extends Component {
 // 	constructor(props) {
