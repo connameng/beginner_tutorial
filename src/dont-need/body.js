@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Room_question from './room_question'
-// import Results from './resultspage'
 
 // this should hold my state since it's the highest component that will use them. Both questions and results will use the state 
-class Body extends Component {
+class Questions extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -36,11 +35,14 @@ class Body extends Component {
           <Room_question handleAnswers={this.handleAnswers}/>
 
         </div>
-    );
+
+    );   
   }
 }
 
-export default Body;
+
+
+export default Questions;
 
 // <Route path="/results" component={Results} />
 

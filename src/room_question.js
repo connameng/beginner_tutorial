@@ -1,20 +1,17 @@
  
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Bandwidth_question from './bandwidth_question'
+// import Bandwidth_question from './bandwidth_question'
 
-// <button><Link to="/">Bandwidth_question</Link></button>
-// <Route exact path="/" component={Bandwidth_question}/>
-
-const BasicExample = () => (
-  <Router>
-    <div>
-    	<button><Link to="/Bandwidth_question">next question</Link></button>
-      <hr/>
-        <Route path="/Bandwidth_question" component={Bandwidth_question}/>
-    </div>
-  </Router>
-)
+// const BasicExample = () => (
+//   <Router>
+//     <div>
+//     	<button><Link to="/Bandwidth_question">next question</Link></button>
+//       <hr/>
+//         <Route path="/Bandwidth_question" component={Bandwidth_question}/>
+//     </div>
+//   </Router>
+// )
 
 class Room_question extends Component {
 	// everytime render component takes prop from parent 
@@ -31,7 +28,7 @@ class Room_question extends Component {
 		this.setState({
 			answer: e.target.value
 		});
-		this.props.handleAnswers(e);
+		this.props.handleRoomAnswer(e);
 	}
 
 // questions
@@ -56,7 +53,7 @@ class Room_question extends Component {
 				</div>
 			 <div>
 		        <p className="App-intro"></p>
-		        <BasicExample/>
+		       {/* <BasicExample/> */} 
 		     </div>
 
 			</div>

@@ -1,44 +1,39 @@
-
-import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-
+import React, { Component } from 'react';
+import './App.css';
+import Room_question from './room_question'
+ 
 class Questions extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			answer: "option1"
-		};
+  constructor(props) {
+    super(props)
+    this.state = {
+      someVar: ''
+    }
 
-		this.handleOptionChange = this.handleOptionChange.bind(this);
-	}
-	handleOptionChange(changeEvent) {
-		this.setState({
-			answer: changeEvent.target.value
-		});
-	}
+    this.handleRoomAnswer = this.handleRoomAnswer.bind(this)
+  }
 
-// questions
-	render () {
-		return (
-			<div className="container">
-				<Room_Question />
+  handleRoomAnswer(e) {
+    // prevents page from reloading 
+    e.preventDefault()
+    this.setState({
+      someVar: e.target.value
+    })
+  }
 
-				
-				<div className="row">
-					<button>
-						<Link to='/results' replace >
-							Filtered results
-						</Link>
-					</button>
-					<button>
-						<Link to={{ pathname: '/results', state: { answer: this.state.answer } }}>
-							Go back
-						</Link>
-					</button>
-				</div>
-			</div>
-			)
-		}
-	}
+  render() {
+    return (
+      <div style={{
+        float: 'left',
+        padding: '10px',
+        width: '45%',
+        background: '#f0f0f0'
+      }}>
+        {this.state.someVar}
+          <Room_question handleRoomAnswer={this.handleRoomAnswer}/>
+        </div>
 
-	export default Questions
+    );   
+  }
+}
+
+export default Questions;
