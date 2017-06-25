@@ -8,10 +8,10 @@ class Header extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>HeaderComponent - Best Wifi Router Guide</h2>
+          <h2>Best Wifi Router Guide</h2>
         </div>
         <p className="App-intro">
-          header - This quick survey will allow you to easily see which wifi router is right for you! Don't overpay.
+          This quick survey will allow you to easily see which wifi router is right for you! Don't overpay.
         </p>
       </div>
     );

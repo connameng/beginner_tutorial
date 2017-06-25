@@ -1,15 +1,25 @@
 import React, { Component } from 'react'
-import ShowCard from './ShowCard'
 import preload from '../public/routerdata.json'
+import ShowCard from './ShowCard'
 
 class Routers extends Component {
-  render () {
+  constructor(props) {
+    super(props)
+    
+  }
+  render() {
+    console.log(this.props)
     return (
-      <div className='results' style={{ flex: 1, padding: '10px' }}>
-        <div>
-          {preload.routers.map(show => <ShowCard key={show.model} model={show.model} antenas={show.antenas} frequency={show.frequency} />)}
-        </div>
-      </div>
+       <div> 
+        <h3>Here are your Routers: </h3>
+          <div className="search">
+          {preload.routers.filter( 
+            router => router.rooms.indexOf(this.props.userAnswers) >= 0
+            )
+          .map( router => <ShowCard key={router.id} {...router}/>)
+          }
+          </div>
+    </div>
     )
   }
 }

@@ -1,22 +1,26 @@
 
-
  {
-    "routers": [{
+    "routers": [{ "id": "1",
         "model": "linksys x40",
         "antenas": "4",
         "frequency": "2.4ghz",
         "transferrate": "1000gb",
         "rooms" : "1bdrm",
-        "price" : "$50"
+        "price" : "$50" 
     },{
+        "id": "2",
         "model": "netgear nighthawk",
         "antenas": "9",
         "frequency": "5ghz",
+        "rooms" : "2bdrm",
         "transferrate": "1000gb"
     },{
+        "id": "3",
         "model": "Cisco",
         "antenas": "4",
         "frequency": "2.4ghz",
+        "rooms" : "2bdrm",
         "transferrate": "500gb"
-    }
+
+   }
 ]}

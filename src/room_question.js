@@ -1,6 +1,6 @@
  
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 // import Bandwidth_question from './bandwidth_question'
 
 // const BasicExample = () => (
@@ -20,7 +20,7 @@ class Room_question extends Component {
 		this.state = {
 			answer: "2bdrm"
 		};
-
+	// binding function handle option change to instance it's being called on. Have to do.
 		this.handleOptionChange = this.handleOptionChange.bind(this);
 	}
 	// on change event 
@@ -51,11 +51,6 @@ class Room_question extends Component {
 						</div>
 					</div>
 				</div>
-			 <div>
-		        <p className="App-intro"></p>
-		       {/* <BasicExample/> */} 
-		     </div>
-
 			</div>
 			)
 		}
