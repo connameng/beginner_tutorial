@@ -11,12 +11,12 @@ class Routers extends Component {
     console.log(this.props)
     return (
        <div> 
-        <h3>Here are your Routers: </h3>
+        <h3 style={{marginTop: 0}}> Here are your Routers: </h3>
           <div className="search">
           {preload.routers.filter( 
-            router => router.rooms.indexOf(this.props.userAnswers) >= 0
+            router => router.antennas.indexOf(this.props.userAnswers) >= 0
             )
-          .map( router => <ShowCard key={router.id} {...router}/>)
+          .map( router => <ShowCard key={router.ASIN} {...router}/>)
           }
           </div>
     </div>
@@ -24,4 +24,5 @@ class Routers extends Component {
   }
 }
 
+// change indexOf to .contains -- have userAnswers be an array [] --  this.props.allAnswers
 export default Routers

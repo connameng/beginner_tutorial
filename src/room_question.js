@@ -18,7 +18,7 @@ class Room_question extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			answer: "2bdrm"
+			answer: "3"
 		};
 	// binding function handle option change to instance it's being called on. Have to do.
 		this.handleOptionChange = this.handleOptionChange.bind(this);
@@ -39,13 +39,13 @@ class Room_question extends Component {
 					<div className="col-sm-12"> How many rooms is your home/ apartment? [Range/ antenna question]
 						<div className="radio">
 							<label>
-							<input type="radio" value="1bdrm" checked={this.state.answer === '1bdrm'} onChange={this.handleOptionChange}/>
+							<input type="radio" value="3" checked={this.state.answer === '3'} onChange={this.handleOptionChange}/>
 								1 bedroom
 							</label>
 						</div>
 						<div className="radio">
 							<label>
-							<input type="radio" value="2bdrm" checked={this.state.answer === '2bdrm'} onChange={this.handleOptionChange} />
+							<input type="radio" value="6" checked={this.state.answer === '6'} onChange={this.handleOptionChange} />
 								2+ bedrooms 
 							</label>
 						</div>

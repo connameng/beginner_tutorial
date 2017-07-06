@@ -9,6 +9,7 @@
     "eslint-plugin-import": "^2.2.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-iframe": "^1.0.7",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "survey-react": "^0.12.15"
