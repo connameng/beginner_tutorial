@@ -5,7 +5,7 @@ import Iframe from 'react-iframe'
 class ShowCard extends Component {
 
  render () {
-  const { product_name, antennas, iframe_url } = this.props
+  const { iframe_url } = this.props
     return (
       <div className='show-card'>
           <Iframe url={iframe_url}

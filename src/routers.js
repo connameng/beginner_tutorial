@@ -14,7 +14,7 @@ class Routers extends Component {
         <h3 style={{marginTop: 0}}> Here are your Routers: </h3>
           <div className="search">
           {preload.routers.filter( 
-            router => router.antennas.indexOf(this.props.userAnswers) >= 0
+            router => router['antennas_value (1=<3; 2>3;3=6+or mesh_network)'].indexOf(this.props.userAnswers) >= 0
             )
           .map( router => <ShowCard key={router.ASIN} {...router}/>)
           }
