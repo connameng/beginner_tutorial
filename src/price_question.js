@@ -28,7 +28,7 @@ class PriceQuestion extends Component {
 		this.setState({
 			answer: e.target.value
 		});
-		this.props.handleAnswers(e);
+		this.props.handlePriceAnswer(e);
 	}
 
 // questions

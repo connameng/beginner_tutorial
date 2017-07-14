@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import PriceQuestion from './price_question'
 
 // need to figure out how to pass the state through the router 
-const BasicExample = () => (
+const BasicExample = (props) => (
   <Router>
     <div>{this}
     	<button><Link to={{pathname: "/Price_question", state: {  }}}>next question</Link></button>
@@ -58,14 +58,14 @@ class RoomQuestion extends Component {
 						</div>
 					</div>
 				</div>
-				<div>
-			    	{this.state.someVar}
-		        	<p className="App-intro"></p>
-		        	<BasicExample handlePriceQuestion={this.props.handlePriceQuestion}/>
-		      </div>
 			</div>
 			)
 		}
 	}
 
 export default RoomQuestion
+				// <div>
+			 //    	{this.state.someVar}
+		  //       	<p className="App-intro"></p>
+		  //       	<BasicExample handlePriceQuestion={this.props.handlePriceQuestion}/>
+		  //     </div>

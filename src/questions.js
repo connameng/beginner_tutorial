@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import RoomQuestion from './room_question';
 import Routers from './routers';
+import PriceQuestion from './price_question'
  
 class Questions extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class Questions extends Component {
       items,
     })
   }
-    handlePriceAnswer(e) {
+  handlePriceAnswer(e) {
     // prevents page from reloading 
     e.preventDefault()
     const items = this.state.allAnswers;
@@ -44,7 +45,8 @@ class Questions extends Component {
         width: '45%',
         background: '#f0f0f0'
       }}>
-            <RoomQuestion handleRoomAnswer={this.handleRoomAnswer} handlePriceAnswer={this.handlePriceAnswer}/>
+            <RoomQuestion handleRoomAnswer={this.handleRoomAnswer} />
+            <PriceQuestion handlePriceAnswer={this.handlePriceAnswer} />
           </div>
           <div style={{
         float: 'left',
