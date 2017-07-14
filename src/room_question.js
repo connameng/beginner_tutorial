@@ -1,19 +1,20 @@
  
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Price_question from './price_question'
+import PriceQuestion from './price_question'
 
+// need to figure out how to pass the state through the router 
 const BasicExample = () => (
   <Router>
-    <div>
-    	<button><Link to="/Price_question">next question</Link></button>
+    <div>{this}
+    	<button><Link to={{pathname: "/Price_question", state: {  }}}>next question</Link></button>
       <hr/>
-        <Route path="/Price_question" component={Price_question}/>
+        <Route path="/Price_question" component={PriceQuestion}/>
     </div>
   </Router>
 )
 
-class Room_question extends Component {
+class RoomQuestion extends Component {
 	// everytime render component takes prop from parent 
 	constructor(props) {
 		super(props);
@@ -39,19 +40,19 @@ class Room_question extends Component {
 					<div className="col-sm-12"> How many rooms is your home/ apartment? [Range/ antenna question]
 						<div className="radio">
 							<label>
-							<input type="radio" value="1" checked={this.state.answer =='1'} onChange={this.handleOptionChange}/>
+							<input type="radio" value="1" checked={this.state.answer ==='1'} onChange={this.handleOptionChange}/>
 								1 bedroom
 							</label>
 						</div>
 						<div className="radio">
 							<label>
-							<input type="radio" value="2" checked={this.state.answer == '2'} onChange={this.handleOptionChange} />
+							<input type="radio" value="2" checked={this.state.answer === '2'} onChange={this.handleOptionChange} />
 								2+ bedrooms 
 							</label>
 						</div>
 						<div className="radio">
 							<label>
-							<input type="radio" value="3" checked={this.state.answer == '3'} onChange={this.handleOptionChange} />
+							<input type="radio" value="3" checked={this.state.answer === '3'} onChange={this.handleOptionChange} />
 								4+ bedrooms 
 							</label>
 						</div>
@@ -60,11 +61,11 @@ class Room_question extends Component {
 				<div>
 			    	{this.state.someVar}
 		        	<p className="App-intro"></p>
-		        	<BasicExample/>
+		        	<BasicExample handlePriceQuestion={this.props.handlePriceQuestion}/>
 		      </div>
 			</div>
 			)
 		}
 	}
 
-export default Room_question
+export default RoomQuestion

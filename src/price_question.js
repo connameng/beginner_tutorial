@@ -13,7 +13,7 @@ import React, { Component } from 'react'
 // //   </Router>
 // // )
 
-class Price_question extends Component {
+class PriceQuestion extends Component {
 	// everytime render component takes prop from parent 
 	constructor(props) {
 		super(props);
@@ -33,6 +33,7 @@ class Price_question extends Component {
 
 // questions
 	render () {
+		console.log("Price_question: ", this.props)
 		return (
 			<div className="container">
 				<div className="row">
@@ -62,4 +63,4 @@ class Price_question extends Component {
 		}
 	}
 
-export default Price_question
+export default PriceQuestion
