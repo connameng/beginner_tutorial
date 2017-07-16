@@ -8,13 +8,27 @@ class Routers extends Component {
   }
   render() {
     console.log(this.props.userAnswers)
-    var antennaAnswer = this.props.userAnswers[0]
-    if(!antennaAnswer) {
-      antennaAnswer = ""
-    }
-    var priceAnswer = this.props.userAnswers[1]
+    
+    var priceAnswer = this.props.userAnswers[0]
     if(!priceAnswer) {
       priceAnswer = ""
+    }
+     
+     preload.routers.forEach(function(router) {
+      if(priceAnswer === "1"){
+        if(router['LAN_ports'] = 4) {
+          return router
+        }
+      }
+      if(priceAnswer === "2"){
+        if(router['LAN_ports'] < 4) {
+          return router
+        }
+      }
+
+    var antennaAnswer = this.props.userAnswers[1]
+    if(!antennaAnswer) {
+      antennaAnswer = ""
     }
     var parentalAnswer = this.props.userAnswers[2]
     if(!parentalAnswer) {
@@ -77,5 +91,4 @@ class Routers extends Component {
   }
 }
 
-// change indexOf to .contains -- have userAnswers be an array [] --  this.props.allAnswers
 export default Routers

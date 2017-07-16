@@ -1,3 +1,6 @@
+// Filters out routers that are overly powerful or that are not powerful enough. 
+// To do: - add section about how to find out which plan they are on. 
+
 import React, { Component } from 'react'
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 // // import Speed_question from './speed_question'
@@ -47,6 +50,12 @@ class DataTransferQuestion extends Component {
 							<label>
 							<input type="radio" value="2" checked={this.state.answer === '2'} onChange={this.handleOptionChange} />
 								Greater than 100 Mbps
+							</label>
+						</div>
+						<div className="radio">
+							<label>
+							<input type="radio" value="" checked={this.state.answer === ''} onChange={this.handleOptionChange} />
+								clear field  
 							</label>
 						</div>
 					</div>

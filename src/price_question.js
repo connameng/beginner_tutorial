@@ -1,16 +1,19 @@
- import React, { Component } from 'react'
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-// // import Speed_question from './speed_question'
+// filters out routers that are not less than X of what the user selects. 
+// To Do: - need to make an if statement like the lan ports. Just have it filter out for 1 and 2 
 
-// // const BasicExample = () => (
-// //   <Router>
-// //     <div>
-// //     	<button><Link to="/Speed_question">next question</Link></button>
-// //       <hr/>
-// //         <Route path="/Speed_question" component={Speed_question}/>
-// //     </div>
-// //   </Router>
-// // )
+import React, { Component } from 'react'
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+// import Speed_question from './speed_question'
+
+// const BasicExample = () => (
+//   <Router>
+//     <div>
+//     	<button><Link to="/Speed_question">next question</Link></button>
+//       <hr/>
+//         <Route path="/Speed_question" component={Speed_question}/>
+//     </div>
+//   </Router>
+// )
 
 class PriceQuestion extends Component {
 	// everytime render component takes prop from parent 
@@ -30,7 +33,7 @@ class PriceQuestion extends Component {
 		this.props.handlePriceAnswer(e);
 	}
 
-// questions
+// Question and answer options as buttons 
 	render () {
 		console.log("Price_question: ", this.props)
 		return (
@@ -40,19 +43,19 @@ class PriceQuestion extends Component {
  						<div className="radio">
 							<label>
 							<input type="radio" value="1" checked={this.state.answer === '1'} onChange={this.handleOptionChange}/>
-								$0-100
+								$100 or less	
 							</label>
 						</div>
 						<div className="radio">
 							<label>
 							<input type="radio" value="2" checked={this.state.answer === '2'} onChange={this.handleOptionChange} />
-								$100-200
+								$200 or less
 							</label>
 						</div>
 						<div className="radio">
 							<label>
-							<input type="radio" value="3" checked={this.state.answer === '3'} onChange={this.handleOptionChange} />
-								$200+
+							<input type="radio" value="" checked={this.state.answer === ""} onChange={this.handleOptionChange} />
+								Any price - just get me the best! 
 							</label>
 						</div>
 						<div className="radio">

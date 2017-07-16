@@ -1,3 +1,5 @@
+// aggregates all question components and pulls them in on the right hand side of the page. 
+
 import React, { Component } from 'react';
 import './App.css';
 import RoomQuestion from './room_question';
@@ -14,15 +16,15 @@ class Questions extends Component {
     this.state = {
       allAnswers: [],
     }
-    this.handleRoomAnswer = this.handleRoomAnswer.bind(this)
     this.handlePriceAnswer = this.handlePriceAnswer.bind(this)
+    this.handleRoomAnswer = this.handleRoomAnswer.bind(this)
     this.handleParentalAnswer = this.handleParentalAnswer.bind(this)
     this.handleFrequencyAnswer = this.handleFrequencyAnswer.bind(this)
     this.handleDataTransferAnswer = this.handleDataTransferAnswer.bind(this)
     this.handleLanPortAnswer = this.handleLanPortAnswer.bind(this)
   }
-// make more of these 
-  handleRoomAnswer(e) {
+
+  handlePriceAnswer(e) {
     // prevents page from reloading 
     e.preventDefault()
     const items = this.state.allAnswers;
@@ -32,53 +34,43 @@ class Questions extends Component {
       items,
     })
   }
-  handlePriceAnswer(e) {
-    // prevents page from reloading 
+  handleRoomAnswer(e) {
     e.preventDefault()
     const items = this.state.allAnswers;
     items[1] = e.target.value;
     this.setState({
-//      someVar: e.target.value
       items,
     })
   }
   handleParentalAnswer(e) {
-  // prevents page from reloading 
   e.preventDefault()
   const items = this.state.allAnswers;
   items[2] = e.target.value;
   this.setState({
-  //      someVar: e.target.value
     items,
   })
   }
   handleFrequencyAnswer(e) {
-  // prevents page from reloading 
   e.preventDefault()
   const items = this.state.allAnswers;
   items[3] = e.target.value;
   this.setState({
-  //      someVar: e.target.value
     items,
   })
   }
   handleDataTransferAnswer(e) {
-  // prevents page from reloading 
   e.preventDefault()
   const items = this.state.allAnswers;
   items[4] = e.target.value;
   this.setState({
-  //      someVar: e.target.value
     items,
   })
   }
   handleLanPortAnswer(e) {
-  // prevents page from reloading 
   e.preventDefault()
   const items = this.state.allAnswers;
   items[5] = e.target.value;
   this.setState({
-  //      someVar: e.target.value
     items,
   })
   }
@@ -93,8 +85,8 @@ class Questions extends Component {
             width: '45%',
             background: '#f0f0f0'
           }}>
-            <RoomQuestion handleRoomAnswer={this.handleRoomAnswer} />
             <PriceQuestion handlePriceAnswer={this.handlePriceAnswer} />
+            <RoomQuestion handleRoomAnswer={this.handleRoomAnswer} />
             <ParentalQuestion handleParentalAnswer={this.handleParentalAnswer} />
             <FrequencyQuestion handleFrequencyAnswer={this.handleFrequencyAnswer} />
             <DataTransferQuestion handleDataTransferAnswer={this.handleDataTransferAnswer} />

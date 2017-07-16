@@ -1,16 +1,6 @@
+// Done. Filters out routers who only have 2.4ghz if user selects they live in an apartement. 
 import React, { Component } from 'react'
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-// // import Speed_question from './speed_question'
 
-// // const BasicExample = () => (
-// //   <Router>
-// //     <div>
-// //     	<button><Link to="/Speed_question">next question</Link></button>
-// //       <hr/>
-// //         <Route path="/Speed_question" component={Speed_question}/>
-// //     </div>
-// //   </Router>
-// // )
 
 class FrequencyQuestion extends Component {
 	// everytime render component takes prop from parent 

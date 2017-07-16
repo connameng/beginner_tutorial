@@ -1,3 +1,6 @@
+// filter out the routers without enough antennas for the larger places. 
+// To Do: change the filter to be like the lan_port
+
 import React, { Component } from 'react'
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 // import PriceQuestion from './price_question'
@@ -31,7 +34,6 @@ class RoomQuestion extends Component {
 		this.props.handleRoomAnswer(e);
 	}
 
-// questions
 	render () {
 		return (
 			<div className="container">
@@ -69,8 +71,3 @@ class RoomQuestion extends Component {
 	}
 
 export default RoomQuestion
-				// <div>
-			 //    	{this.state.someVar}
-		  //       	<p className="App-intro"></p>
-		  //       	<BasicExample handlePriceQuestion={this.props.handlePriceQuestion}/>
-		  //     </div>

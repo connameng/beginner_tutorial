@@ -1,3 +1,5 @@
+// More than 4 needed, filter the one's out with less than 4
+// To do: - add section about putting a switch on the routers with less than 4 LAN ports. 
 import React, { Component } from 'react'
 
 class LanPortQuestion extends Component {
@@ -27,13 +29,13 @@ class LanPortQuestion extends Component {
 					<div className="col-sm-12">Number of lan ports? [Lan Port question]
  						<div className="radio">
 							<label>
-							<input type="radio" value=">4" checked={this.state.answer === '>4'} onChange={this.handleOptionChange}/>
+							<input type="radio" value="" checked={this.state.answer === ''} onChange={this.handleOptionChange}/>
 								less than 4
 							</label>
 						</div>
 						<div className="radio">
 							<label>
-							<input type="radio" value="<4" checked={this.state.answer === '<4'} onChange={this.handleOptionChange} />
+							<input type="radio" value=">4" checked={this.state.answer === '>4'} onChange={this.handleOptionChange} />
 								more than 4
 							</label>
 						</div>
