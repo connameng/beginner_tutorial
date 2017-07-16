@@ -5,7 +5,8 @@ import Routers from './routers';
 import PriceQuestion from './price_question'
 import ParentalQuestion from './parental_control_question'
 import FrequencyQuestion from './frequency_band_question'
-import DataTransferQuestion from './data_transfer_rate_question' 
+import DataTransferQuestion from './data_transfer_rate_question'
+import LanPortQuestion from './lan_port_question' 
  
 class Questions extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class Questions extends Component {
     this.handleParentalAnswer = this.handleParentalAnswer.bind(this)
     this.handleFrequencyAnswer = this.handleFrequencyAnswer.bind(this)
     this.handleDataTransferAnswer = this.handleDataTransferAnswer.bind(this)
+    this.handleLanPortAnswer = this.handleLanPortAnswer.bind(this)
   }
 // make more of these 
   handleRoomAnswer(e) {
@@ -70,6 +72,16 @@ class Questions extends Component {
     items,
   })
   }
+  handleLanPortAnswer(e) {
+  // prevents page from reloading 
+  e.preventDefault()
+  const items = this.state.allAnswers;
+  items[5] = e.target.value;
+  this.setState({
+  //      someVar: e.target.value
+    items,
+  })
+  }
 
   render() {
     return (
@@ -86,6 +98,7 @@ class Questions extends Component {
             <ParentalQuestion handleParentalAnswer={this.handleParentalAnswer} />
             <FrequencyQuestion handleFrequencyAnswer={this.handleFrequencyAnswer} />
             <DataTransferQuestion handleDataTransferAnswer={this.handleDataTransferAnswer} />
+            <LanPortQuestion handleLanPortAnswer={this.handleLanPortAnswer} />
           </div>
           <div style={{
             float: 'left',

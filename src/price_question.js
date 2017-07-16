@@ -55,6 +55,12 @@ class PriceQuestion extends Component {
 								$200+
 							</label>
 						</div>
+						<div className="radio">
+							<label>
+							<input type="radio" value="" checked={this.state.answer === ''} onChange={this.handleOptionChange} />
+								clear field  
+							</label>
+						</div>
 					</div>
 				</div>	
 			</div>

@@ -45,7 +45,7 @@ class FrequencyQuestion extends Component {
 						</div>
 						<div className="radio">
 							<label>
-							<input type="radio" value="TRUE or FALSE" checked={this.state.answer === 'TRUE or FALSE'} onChange={this.handleOptionChange} />
+							<input type="radio" value="" checked={this.state.answer === ''} onChange={this.handleOptionChange} />
 								No
 							</label>
 						</div>

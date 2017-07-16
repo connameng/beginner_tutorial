@@ -55,6 +55,12 @@ class RoomQuestion extends Component {
 								4+ bedrooms 
 							</label>
 						</div>
+						<div className="radio">
+							<label>
+							<input type="radio" value="" checked={this.state.answer === ''} onChange={this.handleOptionChange} />
+								clear field  
+							</label>
+						</div>
 					</div>
 				</div>
 			</div>

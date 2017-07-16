@@ -1,16 +1,4 @@
 import React, { Component } from 'react'
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-// // import Speed_question from './speed_question'
-
-// // const BasicExample = () => (
-// //   <Router>
-// //     <div>
-// //     	<button><Link to="/Speed_question">next question</Link></button>
-// //       <hr/>
-// //         <Route path="/Speed_question" component={Speed_question}/>
-// //     </div>
-// //   </Router>
-// // )
 
 class ParentalQuestion extends Component {
 	// everytime render component takes prop from parent 
@@ -45,7 +33,7 @@ class ParentalQuestion extends Component {
 						</div>
 						<div className="radio">
 							<label>
-							<input type="radio" value="TRUE or FALSE" checked={this.state.answer === undefined} onChange={this.handleOptionChange} />
+							<input type="radio" value="" checked={this.state.answer === ""} onChange={this.handleOptionChange} />
 								No
 							</label>
 						</div>
