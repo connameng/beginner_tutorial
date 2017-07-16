@@ -4,8 +4,7 @@ import ShowCard from './ShowCard'
 
 class Routers extends Component {
   constructor(props) {
-    super(props)
-    
+    super(props) 
   }
   render() {
     console.log(this.props.userAnswers[0])
@@ -17,14 +16,28 @@ class Routers extends Component {
     if(!priceAnswer) {
       priceAnswer = ""
     }
+    var parentalAnswer = this.props.userAnswers[2]
+    if(!parentalAnswer) {
+    parentalAnswer = ""
+    }
+    var frequencyAnswer = this.props.userAnswers[3]
+    if(!frequencyAnswer) {
+    frequencyAnswer = ""
+    }
+    var dataTransferAnswer = this.props.userAnswers[4]
+    if(!dataTransferAnswer) {
+    dataTransferAnswer = ""
+    }
     return (
        <div> 
         <h3 style={{marginTop: 0}}> Here are your Routers: </h3>
           <div className="search">
           {preload.routers.filter( 
-            router => router['antennas_value (1=<3; 2>3;3=6+or mesh_network)'].indexOf(antennaAnswer) >= 0
-            )
+            router => router['antennas_value (1=<3; 2>3;3=6+or mesh_network)'].indexOf(antennaAnswer) >= 0)
           .filter(router => router['price_value (0-100=1;100-200=2;200+=3)'].indexOf(priceAnswer) >= 0)
+          .filter(router => router['parent_control_specialty'].indexOf(parentalAnswer) >= 0)
+          .filter(router => router['5ghz frequency'].indexOf(frequencyAnswer) >= 0)
+          .filter(router => router['data_transfer_value (1=<1300; 2>1300 mbps)'].indexOf(dataTransferAnswer) >= 0)
           .map( router => <ShowCard key={router.ASIN} {...router}/>)
           }
           </div>

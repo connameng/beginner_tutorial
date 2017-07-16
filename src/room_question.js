@@ -1,18 +1,17 @@
- 
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import PriceQuestion from './price_question'
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+// import PriceQuestion from './price_question'
 
 // need to figure out how to pass the state through the router 
-const BasicExample = (props) => (
-  <Router>
-    <div>{this}
-    	<button><Link to={{pathname: "/Price_question", state: {  }}}>next question</Link></button>
-      <hr/>
-        <Route path="/Price_question" component={PriceQuestion}/>
-    </div>
-  </Router>
-)
+// const BasicExample = (props) => (
+//   <Router>
+//     <div>{this}
+//     	<button><Link to={{pathname: "/Price_question", state: {  }}}>next question</Link></button>
+//       <hr/>
+//         <Route path="/Price_question" component={PriceQuestion}/>
+//     </div>
+//   </Router>
+// )
 
 class RoomQuestion extends Component {
 	// everytime render component takes prop from parent 
@@ -37,7 +36,7 @@ class RoomQuestion extends Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<div className="col-sm-12"> How many rooms is your home/ apartment? [Range/ antenna question]
+					<div className="col-sm-12">How many rooms is your home/ apartment? [Range/ antenna question]
 						<div className="radio">
 							<label>
 							<input type="radio" value="1" checked={this.state.answer ==='1'} onChange={this.handleOptionChange}/>

@@ -1,4 +1,4 @@
- import React, { Component } from 'react'
+import React, { Component } from 'react'
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 // // import Speed_question from './speed_question'
 
@@ -12,7 +12,7 @@
 // //   </Router>
 // // )
 
-class PriceQuestion extends Component {
+class ParentalQuestion extends Component {
 	// everytime render component takes prop from parent 
 	constructor(props) {
 		super(props);
@@ -27,32 +27,26 @@ class PriceQuestion extends Component {
 		this.setState({
 			answer: e.target.value
 		});
-		this.props.handlePriceAnswer(e);
+		this.props.handleParentalAnswer(e);
 	}
 
 // questions
 	render () {
-		console.log("Price_question: ", this.props)
+		console.log("Parental_question: ", this.props)
 		return (
 			<div className="container">
 				<div className="row">
-					<div className="col-sm-12">How much would you like to spend? [Price range question]
+					<div className="col-sm-12">Are you a parent and want to be able to filter/restrict activity on the internet (set up time windows or restricted sites) [Parental controls]
  						<div className="radio">
 							<label>
-							<input type="radio" value="1" checked={this.state.answer === '1'} onChange={this.handleOptionChange}/>
-								$0-100
+							<input type="radio" value="TRUE" checked={this.state.answer === 'TRUE'} onChange={this.handleOptionChange}/>
+								Yes
 							</label>
 						</div>
 						<div className="radio">
 							<label>
-							<input type="radio" value="2" checked={this.state.answer === '2'} onChange={this.handleOptionChange} />
-								$100-200
-							</label>
-						</div>
-						<div className="radio">
-							<label>
-							<input type="radio" value="3" checked={this.state.answer === '3'} onChange={this.handleOptionChange} />
-								$200+
+							<input type="radio" value="TRUE or FALSE" checked={this.state.answer === undefined} onChange={this.handleOptionChange} />
+								No
 							</label>
 						</div>
 					</div>
@@ -62,4 +56,4 @@ class PriceQuestion extends Component {
 		}
 	}
 
-export default PriceQuestion
+export default ParentalQuestion

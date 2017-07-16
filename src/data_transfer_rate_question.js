@@ -1,4 +1,4 @@
- import React, { Component } from 'react'
+import React, { Component } from 'react'
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 // // import Speed_question from './speed_question'
 
@@ -12,7 +12,7 @@
 // //   </Router>
 // // )
 
-class PriceQuestion extends Component {
+class DataTransferQuestion extends Component {
 	// everytime render component takes prop from parent 
 	constructor(props) {
 		super(props);
@@ -27,32 +27,26 @@ class PriceQuestion extends Component {
 		this.setState({
 			answer: e.target.value
 		});
-		this.props.handlePriceAnswer(e);
+		this.props.handleDataTransferAnswer(e);
 	}
 
 // questions
 	render () {
-		console.log("Price_question: ", this.props)
+		console.log("DataTransfer_question: ", this.props)
 		return (
 			<div className="container">
 				<div className="row">
-					<div className="col-sm-12">How much would you like to spend? [Price range question]
+					<div className="col-sm-12"> How fast is the theoretical Download/Upload speed on your internet service provider plan? [Data transfer rate question]
  						<div className="radio">
 							<label>
 							<input type="radio" value="1" checked={this.state.answer === '1'} onChange={this.handleOptionChange}/>
-								$0-100
+								Less than 100 Mbps
 							</label>
 						</div>
 						<div className="radio">
 							<label>
 							<input type="radio" value="2" checked={this.state.answer === '2'} onChange={this.handleOptionChange} />
-								$100-200
-							</label>
-						</div>
-						<div className="radio">
-							<label>
-							<input type="radio" value="3" checked={this.state.answer === '3'} onChange={this.handleOptionChange} />
-								$200+
+								Greater than 100 Mbps
 							</label>
 						</div>
 					</div>
@@ -62,4 +56,4 @@ class PriceQuestion extends Component {
 		}
 	}
 
-export default PriceQuestion
+export default DataTransferQuestion
