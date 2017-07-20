@@ -10,7 +10,7 @@ import FrequencyQuestion from './frequency_band_question'
 import DataTransferQuestion from './data_transfer_rate_question'
 import LanPortQuestion from './lan_port_question' 
 import NumDevicesQuestion from './numDevices_question'
-import { Button, Collapse } from 'react-bootstrap'
+
  
 class Questions extends Component {
   constructor(props) {
@@ -97,27 +97,8 @@ class Questions extends Component {
             background: '#f0f0f0'
           }}>
             <PriceQuestion handlePriceAnswer={this.handlePriceAnswer} />
-            <div>
-             <Button onClick={ ()=> this.setState({ open: !this.state.open })}>
-                Next Question 
-              </Button>
-              <Collapse in={this.state.open}>
-                <div>
-                 <RoomQuestion handleRoomAnswer={this.handleRoomAnswer} />
-                <div>
-                  <Button onClick={ ()=> this.setState({ open: !this.state.open })}>
-                   Next Question 
-                  </Button>
-                  <Collapse in={this.state.open}>
-                   <div>
-                     <ParentalQuestion handleParentalAnswer={this.handleParentalAnswer} />
-                    </div>
-                  </Collapse>
-                </div>
-              </div>
-            </Collapse>
-          </div>
-           
+            <RoomQuestion handleRoomAnswer={this.handleRoomAnswer} />
+            <ParentalQuestion handleParentalAnswer={this.handleParentalAnswer} />
             <FrequencyQuestion handleFrequencyAnswer={this.handleFrequencyAnswer} />
             <DataTransferQuestion handleDataTransferAnswer={this.handleDataTransferAnswer} />
             <LanPortQuestion handleLanPortAnswer={this.handleLanPortAnswer} />
@@ -129,8 +110,7 @@ class Questions extends Component {
             width: '45%'
           }}>
           <Routers userAnswers={this.state.allAnswers} />
-          </div>
-        
+         </div>
         </div>
     );   
   }

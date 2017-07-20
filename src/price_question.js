@@ -2,7 +2,7 @@
 // To Do: 
 
 import React, { Component } from 'react'
-import {ButtonGroup, Button, FormGroup, Radio} from 'react-bootstrap'
+// import {ButtonGroup, Button, FormGroup, Radio} from 'react-bootstrap'
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 // import Speed_question from './speed_question'
 
@@ -38,33 +38,40 @@ class PriceQuestion extends Component {
 	render () {
 		console.log("Price_question: ", this.props)
 		return (
-
+	 
+	  // <ButtonGroup vertical>
+			// 			    <Button>$100 or less</Button>
+			// 			    <Button>$200 or less</Button>
+			// 			    <Button>Any Price - Just get me the Best</Button>
+			// 			    <Button>Clear Answer</Button>
+			// 			    </ButtonGroup>
+			// 	<FormGroup>
+   //    <Radio name="radioGroup" inline>
+   //      1
+   //    </Radio>
+   //    {' '}
+   //    <Radio name="radioGroup" inline>
+   //      2
+   //    </Radio>
+   //    {' '}
+   //    <Radio name="radioGroup" inline>
+   //      3
+   //    </Radio>
+   //  </FormGroup>
+			
 <div className="container">
 				<div className="row">
 					<div className="col-sm-12">How much would you like to spend? [Price range question] 
  						<div className="radio">
- 						  <ButtonGroup vertical>
-						    <Button>$100 or less</Button>
-						    <Button>$200 or less</Button>
-						    <Button>Any Price - Just get me the Best</Button>
-						    <Button>Clear Answer</Button>
-						    </ButtonGroup>
-				<FormGroup>
-      <Radio name="radioGroup" inline>
-        1
-      </Radio>
-      {' '}
-      <Radio name="radioGroup" inline>
-        2
-      </Radio>
-      {' '}
-      <Radio name="radioGroup" inline>
-        3
-      </Radio>
-    </FormGroup>
-							<label>
+ 									<label>
 							<input type="radio" value="<100" checked={this.state.answer === '<100'} onChange={this.handleOptionChange}/>
 								$100 or less	
+							</label>
+						</div>
+						<div className="radio">
+ 									<label>
+							<input type="radio" value="<150" checked={this.state.answer === '<150'} onChange={this.handleOptionChange}/>
+								$150 or less	
 							</label>
 						</div>
 						<div className="radio">

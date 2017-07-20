@@ -80,7 +80,11 @@ class Routers extends Component {
                   return router 
                 }
               }
-              else if(priceAnswer === "<200"){
+             else if(priceAnswer === "<150"){
+                if(router['price ($)'] < 150) {
+                  return router 
+                }
+              } else if(priceAnswer === "<200"){
                 if(router['price ($)'] < 200) {
                   return router 
                 }
