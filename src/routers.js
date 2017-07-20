@@ -1,3 +1,7 @@
+// filters the routers 
+// To Do: - why are we preloading in the render? 
+//        - order questions from biggest filter to least amount filtered out. 
+
 import React, { Component } from 'react'
 import preload from '../public/routerdata.json'
 import ShowCard from './ShowCard'
@@ -10,22 +14,9 @@ class Routers extends Component {
     console.log(this.props.userAnswers)
     
     var priceAnswer = this.props.userAnswers[0]
-    if(!priceAnswer) {
+    if(!priceAnswer || priceAnswer === "anyprice" || priceAnswer === "clearprice") {
       priceAnswer = ""
     }
-     
-     preload.routers.forEach(function(router) {
-      if(priceAnswer === "1"){
-        if(router['LAN_ports'] = 4) {
-          return router
-        }
-      }
-      if(priceAnswer === "2"){
-        if(router['LAN_ports'] < 4) {
-          return router
-        }
-      }
-
     var antennaAnswer = this.props.userAnswers[1]
     if(!antennaAnswer) {
       antennaAnswer = ""
@@ -46,26 +37,57 @@ class Routers extends Component {
     if(!lanPortAnswer) {
     lanPortAnswer = ""
     }
+    var NumDevicesAnswer = this.props.userAnswers[6]
+    if(!NumDevicesAnswer) {
+    NumDevicesAnswer = ""
+    }
 
-    preload.routers.forEach(function(router) {
-      if(lanPortAnswer === ">4"){
-        if(router['LAN_ports'] >= 4) {
-          return router
-        }
-      }
-      if(lanPortAnswer === "<4"){
-        if(router['LAN_ports'] < 4) {
-          return router
-        }
-      }
-    })
+  // preload.routers.forEach(function(router) {
+  //     if(antennaAnswer === "<4"){
+  //       if(router['antennas'] <= 4) {
+  //       console.log("router")
+  //       }
+  //     }
+  //     if(antennaAnswer === ">4"){
+  //       if(router['antennas'] > 4 || router.mesh_network === "TRUE") {
+  //     console.log(router)
+  //      }
+  //     }
+  //     })
+
     return (
        <div> 
         <h3 style={{marginTop: 0}}> Here are your Routers: </h3>
           <div className="search">
           {preload.routers
-            .filter(router => router['antennas_value (1=<3; 2>3;3=6+or mesh_network)'].indexOf(antennaAnswer) >= 0)
-            .filter(router => router['price_value (0-100=1;100-200=2;200+=3)'].indexOf(priceAnswer) >= 0)
+            .filter(router => {
+              if(antennaAnswer === "<4"){
+                  if(router['antennas'] <= 4) {
+                  return router 
+                  }
+                }
+                if(antennaAnswer === ">4"){
+                  if(router['antennas'] > 4 || router.mesh_network === "TRUE") {
+                return router 
+                 }
+                  } else {
+                return router 
+                  }
+                })
+            .filter(router => {
+              if(priceAnswer === "<100"){
+                if(router['price ($)'] <= 100) {
+                  return router 
+                }
+              }
+              else if(priceAnswer === "<200"){
+                if(router['price ($)'] < 200) {
+                  return router 
+                }
+              } else {
+                return router 
+              }
+             })
             .filter(router => router['parent_control_specialty'].indexOf(parentalAnswer) >= 0)
             .filter(router => router['5ghz frequency'].indexOf(frequencyAnswer) >= 0)
             .filter(router => router['data_transfer_value (1=<1300; 2>1300 mbps)'].indexOf(dataTransferAnswer) >= 0)
@@ -74,15 +96,11 @@ class Routers extends Component {
                 if(router['LAN_ports'] >= 4) {
                   return router
                 }
-              }
-              else if(lanPortAnswer === "<4"){
-                if(router['LAN_ports'] < 4) {
-                  return router
-                }
-              } else {
+               } else {
                 return router
               }
             })
+            .filter(router => router['MU-MIMO (number of devices)'].indexOf(NumDevicesAnswer) >= 0)
             .map( router => <ShowCard key={router.ASIN} {...router}/>)
           }
           </div>

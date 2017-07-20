@@ -1,7 +1,8 @@
-// filters out routers that are not less than X of what the user selects. 
-// To Do: - need to make an if statement like the lan ports. Just have it filter out for 1 and 2 
+// filters out routers that are not in range 
+// To Do: 
 
 import React, { Component } from 'react'
+import {ButtonGroup, Button, FormGroup, Radio} from 'react-bootstrap'
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 // import Speed_question from './speed_question'
 
@@ -37,30 +38,50 @@ class PriceQuestion extends Component {
 	render () {
 		console.log("Price_question: ", this.props)
 		return (
-			<div className="container">
+
+<div className="container">
 				<div className="row">
-					<div className="col-sm-12">How much would you like to spend? [Price range question]
+					<div className="col-sm-12">How much would you like to spend? [Price range question] 
  						<div className="radio">
+ 						  <ButtonGroup vertical>
+						    <Button>$100 or less</Button>
+						    <Button>$200 or less</Button>
+						    <Button>Any Price - Just get me the Best</Button>
+						    <Button>Clear Answer</Button>
+						    </ButtonGroup>
+				<FormGroup>
+      <Radio name="radioGroup" inline>
+        1
+      </Radio>
+      {' '}
+      <Radio name="radioGroup" inline>
+        2
+      </Radio>
+      {' '}
+      <Radio name="radioGroup" inline>
+        3
+      </Radio>
+    </FormGroup>
 							<label>
-							<input type="radio" value="1" checked={this.state.answer === '1'} onChange={this.handleOptionChange}/>
+							<input type="radio" value="<100" checked={this.state.answer === '<100'} onChange={this.handleOptionChange}/>
 								$100 or less	
 							</label>
 						</div>
 						<div className="radio">
 							<label>
-							<input type="radio" value="2" checked={this.state.answer === '2'} onChange={this.handleOptionChange} />
+							<input type="radio" value="<200" checked={this.state.answer === '<200'} onChange={this.handleOptionChange} />
 								$200 or less
 							</label>
 						</div>
 						<div className="radio">
 							<label>
-							<input type="radio" value="" checked={this.state.answer === ""} onChange={this.handleOptionChange} />
+							<input type="radio" value="anyprice" checked={this.state.answer === "anyprice"} onChange={this.handleOptionChange} />
 								Any price - just get me the best! 
 							</label>
 						</div>
 						<div className="radio">
 							<label>
-							<input type="radio" value="" checked={this.state.answer === ''} onChange={this.handleOptionChange} />
+							<input type="radio" value="clearprice" checked={this.state.answer === "clearprice"} onChange={this.handleOptionChange} />
 								clear field  
 							</label>
 						</div>

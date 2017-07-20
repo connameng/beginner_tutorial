@@ -9,6 +9,8 @@ import ParentalQuestion from './parental_control_question'
 import FrequencyQuestion from './frequency_band_question'
 import DataTransferQuestion from './data_transfer_rate_question'
 import LanPortQuestion from './lan_port_question' 
+import NumDevicesQuestion from './numDevices_question'
+import { Button, Collapse } from 'react-bootstrap'
  
 class Questions extends Component {
   constructor(props) {
@@ -22,6 +24,7 @@ class Questions extends Component {
     this.handleFrequencyAnswer = this.handleFrequencyAnswer.bind(this)
     this.handleDataTransferAnswer = this.handleDataTransferAnswer.bind(this)
     this.handleLanPortAnswer = this.handleLanPortAnswer.bind(this)
+    this.handleNumDevicesAnswer = this.handleNumDevicesAnswer.bind(this)
   }
 
   handlePriceAnswer(e) {
@@ -74,6 +77,14 @@ class Questions extends Component {
     items,
   })
   }
+ handleNumDevicesAnswer(e) {
+  e.preventDefault()
+  const items = this.state.allAnswers;
+  items[6] = e.target.value;
+  this.setState({
+    items,
+  })
+  }
 
   render() {
     return (
@@ -86,11 +97,31 @@ class Questions extends Component {
             background: '#f0f0f0'
           }}>
             <PriceQuestion handlePriceAnswer={this.handlePriceAnswer} />
-            <RoomQuestion handleRoomAnswer={this.handleRoomAnswer} />
-            <ParentalQuestion handleParentalAnswer={this.handleParentalAnswer} />
+            <div>
+             <Button onClick={ ()=> this.setState({ open: !this.state.open })}>
+                Next Question 
+              </Button>
+              <Collapse in={this.state.open}>
+                <div>
+                 <RoomQuestion handleRoomAnswer={this.handleRoomAnswer} />
+                <div>
+                  <Button onClick={ ()=> this.setState({ open: !this.state.open })}>
+                   Next Question 
+                  </Button>
+                  <Collapse in={this.state.open}>
+                   <div>
+                     <ParentalQuestion handleParentalAnswer={this.handleParentalAnswer} />
+                    </div>
+                  </Collapse>
+                </div>
+              </div>
+            </Collapse>
+          </div>
+           
             <FrequencyQuestion handleFrequencyAnswer={this.handleFrequencyAnswer} />
             <DataTransferQuestion handleDataTransferAnswer={this.handleDataTransferAnswer} />
             <LanPortQuestion handleLanPortAnswer={this.handleLanPortAnswer} />
+            <NumDevicesQuestion handleNumDevicesAnswer={this.handleNumDevicesAnswer} />
           </div>
           <div style={{
             float: 'left',
@@ -99,6 +130,7 @@ class Questions extends Component {
           }}>
           <Routers userAnswers={this.state.allAnswers} />
           </div>
+        
         </div>
     );   
   }

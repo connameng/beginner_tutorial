@@ -1,5 +1,5 @@
 // filter out the routers without enough antennas for the larger places. 
-// To Do: change the filter to be like the lan_port
+// To Do: 
 
 import React, { Component } from 'react'
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
@@ -41,20 +41,14 @@ class RoomQuestion extends Component {
 					<div className="col-sm-12">How many rooms is your home/ apartment? [Range/ antenna question]
 						<div className="radio">
 							<label>
-							<input type="radio" value="1" checked={this.state.answer ==='1'} onChange={this.handleOptionChange}/>
-								1 bedroom
+							<input type="radio" value="<4" checked={this.state.answer ==='<4'} onChange={this.handleOptionChange}/>
+								Studio-2 bedroom
 							</label>
 						</div>
 						<div className="radio">
 							<label>
-							<input type="radio" value="2" checked={this.state.answer === '2'} onChange={this.handleOptionChange} />
-								2+ bedrooms 
-							</label>
-						</div>
-						<div className="radio">
-							<label>
-							<input type="radio" value="3" checked={this.state.answer === '3'} onChange={this.handleOptionChange} />
-								4+ bedrooms 
+							<input type="radio" value=">4" checked={this.state.answer === '>4'} onChange={this.handleOptionChange} />
+								3+ bedrooms 
 							</label>
 						</div>
 						<div className="radio">
