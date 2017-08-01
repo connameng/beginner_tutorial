@@ -92,21 +92,21 @@ class Questions extends Component {
           {this.state.allAnswers}
           <div style={{
             float: 'left',
-            padding: '10px',
+            padding: '5px',
             width: '45%',
             background: '#f0f0f0'
           }}>
             <PriceQuestion handlePriceAnswer={this.handlePriceAnswer} />
             <RoomQuestion handleRoomAnswer={this.handleRoomAnswer} />
+            <NumDevicesQuestion handleNumDevicesAnswer={this.handleNumDevicesAnswer} />
             <ParentalQuestion handleParentalAnswer={this.handleParentalAnswer} />
             <FrequencyQuestion handleFrequencyAnswer={this.handleFrequencyAnswer} />
             <DataTransferQuestion handleDataTransferAnswer={this.handleDataTransferAnswer} />
             <LanPortQuestion handleLanPortAnswer={this.handleLanPortAnswer} />
-            <NumDevicesQuestion handleNumDevicesAnswer={this.handleNumDevicesAnswer} />
           </div>
           <div style={{
             float: 'left',
-            padding: '10px',
+            padding: '5px',
             width: '45%'
           }}>
           <Routers userAnswers={this.state.allAnswers} />
@@ -117,3 +117,4 @@ class Questions extends Component {
 }
 
 export default Questions;
+

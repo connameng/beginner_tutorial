@@ -99,7 +99,7 @@
    "USB": "1",
    "LAN_ports": "2",
    "antennas": "2",
-   "mesh_network": "TRUE",
+   "mesh_network": "FALSE",
    "data_transfer_rate(mb)": "300",
    "data_transfer_value (1=<1300; 2>1300 mbps)": "1",
    "CPU": "750-MHZ ARM CORTEX DUAL-CORE",
