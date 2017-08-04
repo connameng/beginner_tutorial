@@ -1,6 +1,12 @@
 // aggregates all question components and pulls them in on the right hand side of the page. 
 
 import React, { Component } from 'react';
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  history
+} from 'react-router-dom'
 import './App.css';
 import RoomQuestion from './room_question';
 import Routers from './routers';
@@ -10,13 +16,14 @@ import FrequencyQuestion from './frequency_band_question'
 import DataTransferQuestion from './data_transfer_rate_question'
 import LanPortQuestion from './lan_port_question' 
 import NumDevicesQuestion from './numDevices_question'
-
+import {ProgressBar} from 'react-bootstrap'
  
 class Questions extends Component {
   constructor(props) {
     super(props)
     this.state = {
       allAnswers: [],
+      progressBar: 0
     }
     this.handlePriceAnswer = this.handlePriceAnswer.bind(this)
     this.handleRoomAnswer = this.handleRoomAnswer.bind(this)
@@ -25,85 +32,107 @@ class Questions extends Component {
     this.handleDataTransferAnswer = this.handleDataTransferAnswer.bind(this)
     this.handleLanPortAnswer = this.handleLanPortAnswer.bind(this)
     this.handleNumDevicesAnswer = this.handleNumDevicesAnswer.bind(this)
+    this.addProgress = this.addProgress.bind(this)
   }
 
-  handlePriceAnswer(e) {
+  addProgress(){
+    let newProgressBar = this.state.progressBar
+    newProgressBar += 100/7
+    this.setState({progressBar:newProgressBar})
+  }
+
+  handlePriceAnswer(val) {
     // prevents page from reloading 
-    e.preventDefault()
+    // e.preventDefault()
     const items = this.state.allAnswers;
-    items[0] = e.target.value;
-    this.setState({
-//      someVar: e.target.value
-      items,
-    })
-  }
-  handleRoomAnswer(e) {
-    e.preventDefault()
-    const items = this.state.allAnswers;
-    items[1] = e.target.value;
+    items[0] = val.target.value;
     this.setState({
       items,
     })
+    this.addProgress()
+
   }
-  handleParentalAnswer(e) {
-  e.preventDefault()
+  handleRoomAnswer(val) {
+    // e.preventDefault()
+    const items = this.state.allAnswers;
+    items[1] = val.target.value;
+    this.setState({
+      items,
+    })
+    this.addProgress()
+  }
+  handleParentalAnswer(val) {
+  // e.preventDefault()
   const items = this.state.allAnswers;
-  items[2] = e.target.value;
+  items[2] = val.target.value;
   this.setState({
     items,
   })
+  this.addProgress()
   }
-  handleFrequencyAnswer(e) {
-  e.preventDefault()
+  handleFrequencyAnswer(val) {
+  // e.preventDefault()
   const items = this.state.allAnswers;
-  items[3] = e.target.value;
+  items[3] = val.target.value;
   this.setState({
     items,
   })
+  this.addProgress()
   }
-  handleDataTransferAnswer(e) {
-  e.preventDefault()
+  handleDataTransferAnswer(val) {
+  // e.preventDefault()
   const items = this.state.allAnswers;
-  items[4] = e.target.value;
+  items[4] = val.target.value;
   this.setState({
     items,
   })
+  this.addProgress()
   }
-  handleLanPortAnswer(e) {
-  e.preventDefault()
+  handleLanPortAnswer(val) {
+  // e.preventDefault()
   const items = this.state.allAnswers;
-  items[5] = e.target.value;
+  items[5] = val.target.value;
   this.setState({
     items,
   })
+  this.addProgress()
   }
- handleNumDevicesAnswer(e) {
-  e.preventDefault()
+ handleNumDevicesAnswer(val) {
+  // e.preventDefault()
   const items = this.state.allAnswers;
-  items[6] = e.target.value;
+  items[6] = val.target.value;
   this.setState({
     items,
   })
+  this.addProgress()
   }
 
   render() {
     return (
+
+
       <div >
           {this.state.allAnswers}
           <div style={{
             float: 'left',
             padding: '5px',
             width: '45%',
-            background: '#f0f0f0'
           }}>
-            <PriceQuestion handlePriceAnswer={this.handlePriceAnswer} />
-            <RoomQuestion handleRoomAnswer={this.handleRoomAnswer} />
-            <NumDevicesQuestion handleNumDevicesAnswer={this.handleNumDevicesAnswer} />
-            <ParentalQuestion handleParentalAnswer={this.handleParentalAnswer} />
-            <FrequencyQuestion handleFrequencyAnswer={this.handleFrequencyAnswer} />
-            <DataTransferQuestion handleDataTransferAnswer={this.handleDataTransferAnswer} />
-            <LanPortQuestion handleLanPortAnswer={this.handleLanPortAnswer} />
+            <BrowserRouter>
+              <div>
+                <Route exact path="/" render={()=><PriceQuestion context={history} handlePriceAnswer={this.handlePriceAnswer}/>}/>
+                <Route exact path="/RoomQuestion" render={()=><RoomQuestion handleRoomAnswer={this.handleRoomAnswer}/>}/>
+                <Route exact path="/NumDevicesQuestion" render={()=><NumDevicesQuestion handleNumDevicesAnswer={this.handleNumDevicesAnswer}/>}/>
+                <Route exact path="/ParentalQuestion" render={()=><ParentalQuestion handleParentalAnswer={this.handleParentalAnswer}/>}/>
+                <Route exact path="/FrequencyQuestion" render={()=><FrequencyQuestion handleFrequencyAnswer={this.handleFrequencyAnswer}/>}/>
+                <Route exact path="/DataTransferQuestion" render={()=><DataTransferQuestion handleDataTransferAnswer={this.handleDataTransferAnswer}/>}/>
+                <Route exact path="/LanPortQuestion" render={()=><LanPortQuestion handleLanPortAnswer={this.handleLanPortAnswer}/>}/>
+              {/*<Route exact path="/Result" render={()=><Result handleResultsPage={this.handleResultsPage}/>}/>*/}
+              </div>
+            </BrowserRouter>
+              <ProgressBar now={this.state.progressBar} />
           </div>
+  
           <div style={{
             float: 'left',
             padding: '5px',
@@ -117,4 +146,3 @@ class Questions extends Component {
 }
 
 export default Questions;
-

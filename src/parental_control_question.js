@@ -2,6 +2,7 @@
 // To Do: - add a section about open source firmware if they want to get any router, but be able to add parental controls.
 
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class ParentalQuestion extends Component {
 	// everytime render component takes prop from parent 
@@ -28,18 +29,28 @@ class ParentalQuestion extends Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-sm-12">Are you a parent and want to be able to filter/restrict activity on the internet (set up time windows or restricted sites) [Parental controls]
+ 						<Link to="/FrequencyQuestion">
  						<div className="radio">
-							<label>
-							<input type="radio" value="TRUE" checked={this.state.answer === 'TRUE'} onChange={this.handleOptionChange}/>
+
+							<button value="TRUE" onClick={this.handleOptionChange}>
 								Yes
-							</label>
+							</button>
 						</div>
 						<div className="radio">
-							<label>
-							<input type="radio" value="" checked={this.state.answer === ''} onChange={this.handleOptionChange} />
+
+							<button value="" onClick={this.handleOptionChange} >
 								No
-							</label>
+							</button>
 						</div>
+						</Link>
+						<Link to="/NumDevicesQuestion">
+						<div className="radio">
+
+							<button  value=""  onClick={this.handleOptionChange} >
+								Back  
+							</button>
+						</div>
+						</Link>
 					</div>
 				</div>	
 			</div>

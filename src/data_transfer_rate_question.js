@@ -2,18 +2,7 @@
 // To do: - add section about how to find out which plan they are on. 
 
 import React, { Component } from 'react'
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-// // import Speed_question from './speed_question'
-
-// // const BasicExample = () => (
-// //   <Router>
-// //     <div>
-// //     	<button><Link to="/Speed_question">next question</Link></button>
-// //       <hr/>
-// //         <Route path="/Speed_question" component={Speed_question}/>
-// //     </div>
-// //   </Router>
-// // )
+import { Link } from 'react-router-dom'
 
 class DataTransferQuestion extends Component {
 	// everytime render component takes prop from parent 
@@ -40,24 +29,28 @@ class DataTransferQuestion extends Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-sm-12"> How fast is the theoretical Download/Upload speed on your internet service provider plan? [Data transfer rate question]
+ 						<Link to="/LanPortQuestion">
  						<div className="radio">
-							<label>
-							<input type="radio" value="1" checked={this.state.answer === '1'} onChange={this.handleOptionChange}/>
+
+							<button  value="1" onClick={this.handleOptionChange}>
 								Less than 100 Mbps
-							</label>
+							</button>
 						</div>
 						<div className="radio">
-							<label>
-							<input type="radio" value="2" checked={this.state.answer === '2'} onChange={this.handleOptionChange} />
+
+							<button value="2"  onClick={this.handleOptionChange} >
 								Greater than 100 Mbps
-							</label>
+							</button>
 						</div>
+						</Link>
+						<Link to="/FrequencyQuestion">
 						<div className="radio">
-							<label>
-							<input type="radio" value="" checked={this.state.answer === ''} onChange={this.handleOptionChange} />
-								clear field  
-							</label>
+
+							<button  value=""  onClick={this.handleOptionChange} >
+								Back  
+							</button>
 						</div>
+						</Link>
 					</div>
 				</div>	
 			</div>

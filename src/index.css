@@ -5,7 +5,16 @@
 }
 
 */
+.myContainer {
+  width: 45%;
+}
 
+.radio {
+  width: 200px;
+  height: 100px;
+  float: left;
+  margin: 1px;
+}
 
 .filter {
   margin: 50px auto;

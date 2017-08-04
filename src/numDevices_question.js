@@ -1,6 +1,7 @@
 // If they have over 8 devices, put MIMO filter = true 
 // To do: none
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class NumDevicesQuestion extends Component {
 	// everytime render component takes prop from parent 
@@ -27,24 +28,28 @@ class NumDevicesQuestion extends Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-sm-12">How many devices do you have on the network? (laptops/gaming systems/cell phones/ TVs etc.) [MIMO question] 
+					<Link to="/ParentalQuestion">
  						<div className="radio">
-							<label>
-							<input type="radio" value="" checked={this.state.answer === ''} onChange={this.handleOptionChange}/>
+
+							<button value="" onClick={this.handleOptionChange}>
 								Less than 8
-							</label>
+							</button>
 						</div>
 						<div className="radio">
-							<label>
-							<input type="radio" value="TRUE" checked={this.state.answer === 'TRUE'} onChange={this.handleOptionChange} />
+
+							<button value="TRUE" onClick={this.handleOptionChange} >
 								More than 8
-							</label>
+							</button>
 						</div>
+					</Link>
+					<Link to="/RoomQuestion">
 						<div className="radio">
-							<label>
-							<input type="radio" value=" " checked={this.state.answer === ''} onChange={this.handleOptionChange} />
-								Clear field  
-							</label>
+
+							<button value="" onClick={this.handleOptionChange} >
+								Back  
+							</button>
 						</div>
+					</Link>
 					</div>
 				</div>	
 			</div>

@@ -1,6 +1,6 @@
 // Done. Filters out routers who only have 2.4ghz if user selects they live in an apartement. 
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom'
 
 class FrequencyQuestion extends Component {
 	// everytime render component takes prop from parent 
@@ -27,18 +27,28 @@ class FrequencyQuestion extends Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-sm-12">Do you live in an apartment complex/ city where there are many current wifi networks? [Frequency band question]
+ 						<Link to="/DataTransferQuestion">
  						<div className="radio">
-							<label>
-							<input type="radio" value="TRUE" checked={this.state.answer === 'TRUE'} onChange={this.handleOptionChange}/>
+
+							<button value="TRUE" onClick={this.handleOptionChange}>
 								Yes
-							</label>
+							</button>
 						</div>
 						<div className="radio">
-							<label>
-							<input type="radio" value="" checked={this.state.answer === ''} onChange={this.handleOptionChange} />
+
+							<button value="" onClick={this.handleOptionChange} >
 								No
-							</label>
+							</button>
 						</div>
+						</Link>
+						<Link to="/ParentalQuestion">
+						<div className="radio">
+
+							<button  value=""  onClick={this.handleOptionChange} >
+								Back  
+							</button>
+						</div>
+						</Link>
 					</div>
 				</div>	
 			</div>

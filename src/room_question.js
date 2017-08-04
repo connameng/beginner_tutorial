@@ -2,19 +2,7 @@
 // To Do: 
 
 import React, { Component } from 'react'
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-// import PriceQuestion from './price_question'
-
-// need to figure out how to pass the state through the router 
-// const BasicExample = (props) => (
-//   <Router>
-//     <div>{this}
-//     	<button><Link to={{pathname: "/Price_question", state: {  }}}>next question</Link></button>
-//       <hr/>
-//         <Route path="/Price_question" component={PriceQuestion}/>
-//     </div>
-//   </Router>
-// )
+import { Link } from 'react-router-dom'
 
 class RoomQuestion extends Component {
 	// everytime render component takes prop from parent 
@@ -39,24 +27,29 @@ class RoomQuestion extends Component {
 			<div className="container">
 				<div className="row">
 					<div className="col-sm-12">How many rooms is your home/ apartment? [Range/ antenna question]
+					<Link to="/NumDevicesQuestion">
 						<div className="radio">
-							<label>
-							<input type="radio" value="<4" checked={this.state.answer ==='<4'} onChange={this.handleOptionChange}/>
+
+							<button value="<4" onClick={this.handleOptionChange}>
 								Studio-2 bedroom
-							</label>
+							</button>
 						</div>
 						<div className="radio">
-							<label>
-							<input type="radio" value=">4" checked={this.state.answer === '>4'} onChange={this.handleOptionChange} />
+
+							<button  value=">4"  onClick={this.handleOptionChange} >
 								3+ bedrooms 
-							</label>
+							</button>
 						</div>
+					</Link>
 						<div className="radio">
-							<label>
-							<input type="radio" value="" checked={this.state.answer === ''} onChange={this.handleOptionChange} />
-								clear field  
-							</label>
+
+							<button value=""  onClick={this.handleOptionChange} >
+								Clear  
+							</button>
 						</div>
+					<Link to="/">
+						Back
+					</Link>
 					</div>
 				</div>
 			</div>
