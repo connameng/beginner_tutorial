@@ -30,11 +30,13 @@ class PriceQuestion extends Component {
 		return (
 
 			<div className="mycontainer">
-				<div className="">
-   					<h3 >How much would you like to spend? [Price range question] 
+				<div>
+   					<h3 className='question-text'> How much would you like to spend? 
 					</h3>
+					<h2 className="subquestion-text"> This is your maximum budget you’d like to spend, an important thing to set first before looking at different features. Note: if you do not see any routers, please turn off your add blocker. Also, you might need to pay more if you require more features.
+					</h2>
    					<Link to="/RoomQuestion">
- 						<div >
+ 						<div className="answer-row">
 							<button className="radio" value="<100" onClick={this.handleOptionChange}>
 								<b>$100</b> or less
 							</button>

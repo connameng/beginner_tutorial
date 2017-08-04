@@ -24,9 +24,10 @@ class FrequencyQuestion extends Component {
 	render () {
 		console.log("Frequency_question: ", this.props)
 		return (
-			<div className="container">
-				<div className="row">
-					<div className="col-sm-12">Do you live in an apartment complex/ city where there are many current wifi networks? [Frequency band question]
+
+			<div className="mycontainer">
+				<div>
+					<div className='question-text'>Do you live in an apartment complex/ city where there are many current wifi networks? [Frequency band question]
  						<Link to="/DataTransferQuestion">
  						<div className="radio">
 

@@ -24,32 +24,37 @@ class RoomQuestion extends Component {
 
 	render () {
 		return (
-			<div className="container">
-				<div className="row">
-					<div className="col-sm-12">How many rooms is your home/ apartment? [Range/ antenna question]
-					<Link to="/NumDevicesQuestion">
-						<div className="radio">
-
-							<button value="<4" onClick={this.handleOptionChange}>
-								Studio-2 bedroom
-							</button>
-						</div>
-						<div className="radio">
-
-							<button  value=">4"  onClick={this.handleOptionChange} >
-								3+ bedrooms 
-							</button>
-						</div>
-					</Link>
-						<div className="radio">
-
-							<button value=""  onClick={this.handleOptionChange} >
-								Clear  
-							</button>
-						</div>
-					<Link to="/">
-						Back
-					</Link>
+			
+			<div className="mycontainer">
+				<div>
+   					<h3 className='question-text'> How many rooms is your home/ apartment? [Range/ antenna question]
+					</h3>
+					<h2 className="subquestion-text"> This will help determine the router range. Note: number of antennas does not correlate directly with range.
+					</h2>
+   					<div className="answer-row">
+   						<Link to="/NumDevicesQuestion">
+ 							<div>
+								<button className="radio" value="<4" onClick={this.handleOptionChange}>
+									Studio-2 bedroom
+								</button>
+							</div>
+							<div>
+								<button className="radio" value=">4"  onClick={this.handleOptionChange} >
+									3+ bedrooms 
+								</button>
+							</div>
+						</Link>
+							{/* <div>
+							// 	<button className="radio" value=""  onClick={this.handleOptionChange} >
+							// 		Clear  
+							// 	</button>
+							// </div>
+							*/}
+						<Link to="/">
+							<div className='radio'>
+								Back
+							</div>
+						</Link>
 					</div>
 				</div>
 			</div>
