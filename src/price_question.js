@@ -36,7 +36,7 @@ class PriceQuestion extends Component {
 					<h2 className="subquestion-text"> This is your maximum budget you’d like to spend, an important thing to set first before looking at different features. Note: if you do not see any routers, please turn off your add blocker. Also, you might need to pay more if you require more features.
 					</h2>
    					<Link to="/RoomQuestion">
- 						<div className="answer-row">
+ 						<div >
 							<button className="radio" value="<100" onClick={this.handleOptionChange}>
 								<b>$100</b> or less
 							</button>

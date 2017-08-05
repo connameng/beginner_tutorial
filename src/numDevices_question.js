@@ -25,32 +25,32 @@ class NumDevicesQuestion extends Component {
 	render () {
 		console.log("NumDevices_question: ", this.props)
 		return (
-			<div className="container">
-				<div className="row">
-					<div className="col-sm-12">How many devices do you have on the network? (laptops/gaming systems/cell phones/ TVs etc.) [MIMO question] 
+			<div className="mycontainer">
+				<div>
+					<h3 className='question-text'> How many devices do you have on the network? (laptops/gaming systems/cell phones/ TVs etc.) [MIMO question] 
+					</h3>
+					<h2 className="subquestion-text"> There's a feature called MIMO that is a great technology which helps with multiple devices. 
+					</h2>
 					<Link to="/ParentalQuestion">
- 						<div className="radio">
-
-							<button value="" onClick={this.handleOptionChange}>
+ 						<div>
+							<button className="radio" value="" onClick={this.handleOptionChange}>
 								Less than 8
 							</button>
 						</div>
-						<div className="radio">
+						<div>
 
-							<button value="TRUE" onClick={this.handleOptionChange} >
+							<button className="radio" value="TRUE" onClick={this.handleOptionChange} >
 								More than 8
 							</button>
 						</div>
 					</Link>
 					<Link to="/RoomQuestion">
-						<div className="radio">
-
-							<button value="" onClick={this.handleOptionChange} >
+						<div>
+							<button className="radio" value="" onClick={this.handleOptionChange} >
 								Back  
 							</button>
 						</div>
 					</Link>
-					</div>
 				</div>	
 			</div>
 			)

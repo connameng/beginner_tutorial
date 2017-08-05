@@ -26,33 +26,30 @@ class ParentalQuestion extends Component {
 	render () {
 		console.log("Parental_question: ", this.props)
 		return (
-			<div className="container">
-				<div className="row">
-					<div className="col-sm-12">Are you a parent and want to be able to filter/restrict activity on the internet (set up time windows or restricted sites) [Parental controls]
- 						<Link to="/FrequencyQuestion">
- 						<div className="radio">
-
-							<button value="TRUE" onClick={this.handleOptionChange}>
+			<div className="mycontainer">
+					<h3 className='question-text'> Are you a parent and want to be able to filter/restrict activity on the internet (set up time windows or restricted sites) [Parental controls]
+					</h3>
+					<h2 className="subquestion-text"> Some routers have a specialty in parental controls.
+					</h2>
+					<Link to="/FrequencyQuestion">
+						<div >
+							<button className="radio" value="TRUE" onClick={this.handleOptionChange}>
 								Yes
 							</button>
 						</div>
-						<div className="radio">
-
-							<button value="" onClick={this.handleOptionChange} >
+						<div >
+							<button className="radio" value="" onClick={this.handleOptionChange} >
 								No
 							</button>
 						</div>
-						</Link>
-						<Link to="/NumDevicesQuestion">
-						<div className="radio">
-
-							<button  value=""  onClick={this.handleOptionChange} >
+					</Link>
+					<Link to="/NumDevicesQuestion">
+						<div>
+							<button className="radio" value=""  onClick={this.handleOptionChange} >
 								Back  
 							</button>
 						</div>
-						</Link>
-					</div>
-				</div>	
+					</Link>
 			</div>
 			)
 		}

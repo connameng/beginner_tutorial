@@ -27,32 +27,32 @@ class FrequencyQuestion extends Component {
 
 			<div className="mycontainer">
 				<div>
-					<div className='question-text'>Do you live in an apartment complex/ city where there are many current wifi networks? [Frequency band question]
- 						<Link to="/DataTransferQuestion">
- 						<div className="radio">
-
-							<button value="TRUE" onClick={this.handleOptionChange}>
+					<h3 className='question-text'> Do you live in an apartment complex/ city where there are many current wifi networks? [Frequency band question]
+					</h3>
+					<h2 className="subquestion-text"> This will help determine which frequency router you need 2.4GHz vs 5GHz. 
+					</h2>
+ 					<Link to="/DataTransferQuestion">
+ 						<div className="answer-row">
+							<button className='radio' value="TRUE" onClick={this.handleOptionChange}>
 								Yes
 							</button>
 						</div>
-						<div className="radio">
-
-							<button value="" onClick={this.handleOptionChange} >
+						<div>
+							<button className='radio' value="" onClick={this.handleOptionChange} >
 								No
 							</button>
 						</div>
 						</Link>
 						<Link to="/ParentalQuestion">
-						<div className="radio">
+							<div>
 
-							<button  value=""  onClick={this.handleOptionChange} >
-								Back  
-							</button>
-						</div>
+								<button className='radio' value=""  onClick={this.handleOptionChange} >
+									Back  
+								</button>
+							</div>
 						</Link>
 					</div>
 				</div>	
-			</div>
 			)
 		}
 	}

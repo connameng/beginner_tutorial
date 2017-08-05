@@ -26,33 +26,34 @@ class DataTransferQuestion extends Component {
 	render () {
 		console.log("DataTransfer_question: ", this.props)
 		return (
-			<div className="container">
-				<div className="row">
-					<div className="col-sm-12"> How fast is the theoretical Download/Upload speed on your internet service provider plan? [Data transfer rate question]
+			<div className="mycontainer">
+				<div>
+					<h3 className="question-text"> How fast is the theoretical Download/Upload speed on your internet service provider plan? [Data transfer rate question]
+ 					</h3>
+ 					<h2 className="subquestion-text"> This is your maximum budget you’d like to spend, an important thing to set first before looking at different features. Note: if you do not see any routers, please turn off your add blocker. Also, you might need to pay more if you require more features.
+					</h2>
  						<Link to="/LanPortQuestion">
- 						<div className="radio">
-
-							<button  value="1" onClick={this.handleOptionChange}>
-								Less than 100 Mbps
-							</button>
-						</div>
-						<div className="radio">
-
-							<button value="2"  onClick={this.handleOptionChange} >
-								Greater than 100 Mbps
-							</button>
-						</div>
+	 						<div className="answer-row">
+		 						<div >
+									<button className="radio" value="1" onClick={this.handleOptionChange}>
+										Less than 100 Mbps
+									</button>
+								</div>
+								<div >
+									<button className="radio" value="2"  onClick={this.handleOptionChange} >
+										Greater than 100 Mbps
+									</button>
+								</div>
+							</div> 
 						</Link>
 						<Link to="/FrequencyQuestion">
-						<div className="radio">
-
-							<button  value=""  onClick={this.handleOptionChange} >
-								Back  
-							</button>
-						</div>
+							<div >
+								<button className="radio" value=""  onClick={this.handleOptionChange} >
+									Back  
+								</button>
+							</div>
 						</Link>
 					</div>
-				</div>	
 			</div>
 			)
 		}

@@ -23,7 +23,7 @@ class Questions extends Component {
     super(props)
     this.state = {
       allAnswers: [],
-      progressBar: 0
+      progressBar: 1
     }
     this.handlePriceAnswer = this.handlePriceAnswer.bind(this)
     this.handleRoomAnswer = this.handleRoomAnswer.bind(this)
@@ -109,8 +109,6 @@ class Questions extends Component {
 
   render() {
     return (
-
-
       <div >
           {this.state.allAnswers}
           <div style={{
