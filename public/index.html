@@ -1,48 +1,107 @@
-<!doctype html>
+
+
+<!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tag above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Wifi-Router Selector</title>
+    <title>Wifi Router Selector</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
   </head>
   <body>
-      <!--   <div id="ProductFilter"></div> -->
-    <div id="root"></div>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
-   <!--
-    
+
+    <!-- Header -->
+      <section id="header">
+        <div class="inner">
+          <span class="icon major fa-cloud"></span>
+
+          <h1> Find which Wifi Router is right for <strong> you </strong> <br /> 
+          within minutes, not hours of research.</h1>
+          <p>Let our experts help!<br />
+          Answer simple questions to see your personalized and unbiased reccomendation <br />
+          from top wireless router brands.</p>
+          <ul class="actions">
+            <li><a href="#one" class="button scrolly">Discover</a></li>
+          </ul>
+        </div>
+      </section>
+
+    <!-- One -->
+      <section id="one" >
+        <div class="container">
+          <div id="root"></div>
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
+        </div>
+      </section>
+
+    <!-- Two -->
+      <section id="two" class="main style2">
+        <div class="container">
+          <div class="row 150%">
+            <div class="6u 12u$(medium)">
+              <ul class="major-icons">
+                <li><span class="icon style1 major fa-code"></span></li>
+                <li><span class="icon style2 major fa-bolt"></span></li>
+                <li><span class="icon style3 major fa-camera-retro"></span></li>
+                <li><span class="icon style4 major fa-cog"></span></li>
+                <li><span class="icon style5 major fa-desktop"></span></li>
+                <li><span class="icon style6 major fa-calendar"></span></li>
+              </ul>
+            </div>
+            <div class="6u$ 12u$(medium)">
+              <header class="major">
+                <h2>Here's how this works:</h2>
+              </header>
+              <p>Based on your answers to these simple qusetions, we filter out routers that do not fit your needs.</p>
+              <p>Some things to take into account: _________.</p>
+              </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Four -->
+      <section id="four" class="main style2 special">
+        <div class="container">
+          <header class="major">
+            <h2>Ipsum feugiat consequat?</h2>
+          </header>
+          <p>Sed lacus nascetur ac ante amet sapien.</p>
+          <ul class="actions uniform">
+            <li><a href="#" class="button special">Sign Up</a></li>
+            <li><a href="#" class="button">Learn More</a></li>
+          </ul>
+        </div>
+      </section>
 
 
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- Footer -->
+      <section id="footer">
+        <ul class="icons">
+          <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+          <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+          <li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </section>
 
-      To begin the development, run `npm start`.
-      To create a production bundle, use `npm run build`. 
-    -->
-    
-  <!-- added these scripts most recently
- <div id="app">not rendered yet</div>
-    <script src="node_modules/react/dist/react.js"></script>
-    <script src="node_modules/react-dom/dist/react-dom.js"></script>
-    <script src="src/app.js"></script>
-    <script src="https://surveyjs.azureedge.net/0.12.15/survey.react.min.js"></script>
-      --> 
-      
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/jquery.scrolly.min.js"></script>
+      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="assets/js/main.js"></script>
+
   </body>
 </html>

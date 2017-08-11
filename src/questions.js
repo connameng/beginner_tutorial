@@ -16,6 +16,7 @@ import FrequencyQuestion from './frequency_band_question'
 import DataTransferQuestion from './data_transfer_rate_question'
 import LanPortQuestion from './lan_port_question' 
 import NumDevicesQuestion from './numDevices_question'
+import Results from './results'
 import {ProgressBar} from 'react-bootstrap'
  
 class Questions extends Component {
@@ -125,7 +126,7 @@ class Questions extends Component {
                 <Route exact path="/FrequencyQuestion" render={()=><FrequencyQuestion handleFrequencyAnswer={this.handleFrequencyAnswer}/>}/>
                 <Route exact path="/DataTransferQuestion" render={()=><DataTransferQuestion handleDataTransferAnswer={this.handleDataTransferAnswer}/>}/>
                 <Route exact path="/LanPortQuestion" render={()=><LanPortQuestion handleLanPortAnswer={this.handleLanPortAnswer}/>}/>
-              {/*<Route exact path="/Result" render={()=><Result handleResultsPage={this.handleResultsPage}/>}/>*/}
+                <Route exact path="/Results" render={()=><Results handleResultsPage={this.handleResultsPage}/>}/>
               </div>
             </BrowserRouter>
               <ProgressBar now={this.state.progressBar} />
