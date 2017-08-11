@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import {
   BrowserRouter,
   Route,
-  Link,
   history
 } from 'react-router-dom'
 import './App.css';

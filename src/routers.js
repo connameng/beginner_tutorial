@@ -1,6 +1,5 @@
 // filters the routers 
-// To Do: - why are we preloading in the render? 
-//        - order questions from biggest filter to least amount filtered out. 
+// To Do:         
 
 import React, { Component } from 'react'
 import preload from '../public/routerdata.json'
