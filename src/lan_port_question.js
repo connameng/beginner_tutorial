@@ -27,11 +27,11 @@ class LanPortQuestion extends Component {
 		return (
 			<div className="mycontainer">
 				<div>
-					<h3 className='question-text'> Number of lan ports? [Lan Port question]
+					<h3 className='question-text' id='footer' > Number of lan ports? [Lan Port question]
 					</h3>
 					<h2 className="subquestion-text"> How many devices do you plan to plug into the back of your router? Hint: it's always faster to do this.
 					</h2>
-					<Link to="/LanPortQuestion">
+					<Link to="/Results">
  						<div>
 							<button className="radio" value="" onClick={this.handleOptionChange} >
 								less than 4

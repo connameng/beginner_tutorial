@@ -6,7 +6,6 @@ import {
   Route,
   history
 } from 'react-router-dom'
-import './App.css';
 import RoomQuestion from './room_question';
 import Routers from './routers';
 import PriceQuestion from './price_question'
