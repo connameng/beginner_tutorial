@@ -108,36 +108,27 @@ class Questions extends Component {
 
   render() {
     return (
-      <div >
-          {this.state.allAnswers}
-          <div style={{
-            float: 'left',
-            padding: '5px',
-            width: '45%',
-          }}>
-            <BrowserRouter>
-              <div>
-                <Route exact path="/" render={()=><PriceQuestion context={history} handlePriceAnswer={this.handlePriceAnswer}/>}/>
-                <Route exact path="/RoomQuestion" render={()=><RoomQuestion handleRoomAnswer={this.handleRoomAnswer}/>}/>
-                <Route exact path="/NumDevicesQuestion" render={()=><NumDevicesQuestion handleNumDevicesAnswer={this.handleNumDevicesAnswer}/>}/>
-                <Route exact path="/ParentalQuestion" render={()=><ParentalQuestion handleParentalAnswer={this.handleParentalAnswer}/>}/>
-                <Route exact path="/FrequencyQuestion" render={()=><FrequencyQuestion handleFrequencyAnswer={this.handleFrequencyAnswer}/>}/>
-                <Route exact path="/DataTransferQuestion" render={()=><DataTransferQuestion handleDataTransferAnswer={this.handleDataTransferAnswer}/>}/>
-                <Route exact path="/LanPortQuestion" render={()=><LanPortQuestion handleLanPortAnswer={this.handleLanPortAnswer}/>}/>
-                <Route exact path="/Results" render={()=><Results handleResultsPage={this.handleResultsPage}/>}/>
-              </div>
-            </BrowserRouter>
-              <ProgressBar now={this.state.progressBar} />
-          </div>
-  
-          <div style={{
-            float: 'left',
-            padding: '5px',
-            width: '45%'
-          }}>
-          <Routers userAnswers={this.state.allAnswers} />
-         </div>
+      <div className='row' >
+        <div className='col-md-6 mycol'>
+          <BrowserRouter className='row'>
+            <div>
+              <Route exact path="/" render={()=><PriceQuestion context={history} handlePriceAnswer={this.handlePriceAnswer}/>}/>
+              <Route exact path="/RoomQuestion" render={()=><RoomQuestion handleRoomAnswer={this.handleRoomAnswer}/>}/>
+              <Route exact path="/NumDevicesQuestion" render={()=><NumDevicesQuestion handleNumDevicesAnswer={this.handleNumDevicesAnswer}/>}/>
+              <Route exact path="/ParentalQuestion" render={()=><ParentalQuestion handleParentalAnswer={this.handleParentalAnswer}/>}/>
+              <Route exact path="/FrequencyQuestion" render={()=><FrequencyQuestion handleFrequencyAnswer={this.handleFrequencyAnswer}/>}/>
+              <Route exact path="/DataTransferQuestion" render={()=><DataTransferQuestion handleDataTransferAnswer={this.handleDataTransferAnswer}/>}/>
+              <Route exact path="/LanPortQuestion" render={()=><LanPortQuestion handleLanPortAnswer={this.handleLanPortAnswer}/>}/>
+              <Route exact path="/Results" render={()=><Results handleResultsPage={this.handleResultsPage}/>}/>
+            </div>
+          </BrowserRouter>
+          <ProgressBar now={this.state.progressBar} />
         </div>
+
+        <div className='col-md-6 mycol'>
+          <Routers userAnswers={this.state.allAnswers} />
+       </div>
+      </div>
     );   
   }
 }
