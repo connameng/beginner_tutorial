@@ -7,7 +7,7 @@ class ShowCard extends Component {
  render () {
   const { iframe_url } = this.props
     return (
-      <div className='col-md-3'>
+      <div >
           <Iframe url={iframe_url}
 		      width="120px"
 		      height="240px"

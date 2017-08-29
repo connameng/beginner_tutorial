@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 class Results extends Component {
   render() {
     return (
-    <div className="mycontainer">
+    <div className="my-container">
 				<div>
 					<h3 className='question-text'> Based on your answers, here are your reccomended routers 
 					</h3>

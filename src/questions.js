@@ -32,11 +32,18 @@ class Questions extends Component {
     this.handleLanPortAnswer = this.handleLanPortAnswer.bind(this)
     this.handleNumDevicesAnswer = this.handleNumDevicesAnswer.bind(this)
     this.addProgress = this.addProgress.bind(this)
+    this.removeProgress = this.removeProgress.bind(this)
   }
 
   addProgress(){
     let newProgressBar = this.state.progressBar
     newProgressBar += 100/7
+    this.setState({progressBar:newProgressBar})
+  }
+
+  removeProgress(){
+    let newProgressBar = this.state.progressBar
+    newProgressBar -= 100/7
     this.setState({progressBar:newProgressBar})
   }
 
@@ -108,24 +115,24 @@ class Questions extends Component {
 
   render() {
     return (
-      <div className='row' >
-        <div className='col-md-6 mycol'>
+      <div >
+        <div className='col-md-6 little-space'>
           <BrowserRouter className='row'>
             <div>
-              <Route exact path="/" render={()=><PriceQuestion context={history} handlePriceAnswer={this.handlePriceAnswer}/>}/>
-              <Route exact path="/RoomQuestion" render={()=><RoomQuestion handleRoomAnswer={this.handleRoomAnswer}/>}/>
-              <Route exact path="/NumDevicesQuestion" render={()=><NumDevicesQuestion handleNumDevicesAnswer={this.handleNumDevicesAnswer}/>}/>
-              <Route exact path="/ParentalQuestion" render={()=><ParentalQuestion handleParentalAnswer={this.handleParentalAnswer}/>}/>
-              <Route exact path="/FrequencyQuestion" render={()=><FrequencyQuestion handleFrequencyAnswer={this.handleFrequencyAnswer}/>}/>
-              <Route exact path="/DataTransferQuestion" render={()=><DataTransferQuestion handleDataTransferAnswer={this.handleDataTransferAnswer}/>}/>
-              <Route exact path="/LanPortQuestion" render={()=><LanPortQuestion handleLanPortAnswer={this.handleLanPortAnswer}/>}/>
-              <Route exact path="/Results" render={()=><Results handleResultsPage={this.handleResultsPage}/>}/>
+              <Route exact path="/" render={()=><PriceQuestion context={history} removeProgress={this.removeProgress} handlePriceAnswer={this.handlePriceAnswer}/>}/>
+              <Route exact path="/RoomQuestion" render={()=><RoomQuestion removeProgress={this.removeProgress} handleRoomAnswer={this.handleRoomAnswer}/>}/>
+              <Route exact path="/NumDevicesQuestion" render={()=><NumDevicesQuestion removeProgress={this.removeProgress} handleNumDevicesAnswer={this.handleNumDevicesAnswer}/>}/>
+              <Route exact path="/ParentalQuestion" render={()=><ParentalQuestion removeProgress={this.removeProgress} handleParentalAnswer={this.handleParentalAnswer}/>}/>
+              <Route exact path="/FrequencyQuestion" render={()=><FrequencyQuestion removeProgress={this.removeProgress} handleFrequencyAnswer={this.handleFrequencyAnswer}/>}/>
+              <Route exact path="/DataTransferQuestion" render={()=><DataTransferQuestion removeProgress={this.removeProgress} handleDataTransferAnswer={this.handleDataTransferAnswer}/>}/>
+              <Route exact path="/LanPortQuestion" render={()=><LanPortQuestion removeProgress={this.removeProgress} handleLanPortAnswer={this.handleLanPortAnswer}/>}/>
+              <Route exact path="/Results" render={()=><Results removeProgress={this.removeProgress} handleResultsPage={this.handleResultsPage}/>}/>
             </div>
           </BrowserRouter>
           <ProgressBar now={this.state.progressBar} />
         </div>
 
-        <div className='col-md-6 mycol'>
+        <div className='col-md-6'>
           <Routers userAnswers={this.state.allAnswers} />
        </div>
       </div>

@@ -32,25 +32,22 @@ class NumDevicesQuestion extends Component {
 					<h2 className="subquestion-text"> There's a feature called MIMO that is a great technology which helps with multiple devices. 
 					</h2>
 					<Link to="/ParentalQuestion">
- 						<div>
-							<button className="radio" value="" onClick={this.handleOptionChange}>
+ 						<div className='row answer-row' >
+							<button className="my-button" value="" onClick={this.handleOptionChange}>
 								Less than 8
 							</button>
-						</div>
-						<div>
-
-							<button className="radio" value="TRUE" onClick={this.handleOptionChange} >
+							<button className="my-button" value="TRUE" onClick={this.handleOptionChange} >
 								More than 8
 							</button>
 						</div>
 					</Link>
-					<Link to="/RoomQuestion">
-						<div>
-							<button className="radio" value="" onClick={this.handleOptionChange} >
-								Back  
-							</button>
-						</div>
-					</Link>
+						<Link to="/RoomQuestion">
+							<div className='row answer-row' >
+								<button className="my-button my-big" onClick={this.props.removeProgress} >
+									Back  
+								</button>
+							</div>
+						</Link>
 				</div>	
 			</div>
 			)

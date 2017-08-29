@@ -25,32 +25,29 @@ class FrequencyQuestion extends Component {
 		console.log("Frequency_question: ", this.props)
 		return (
 
-			<div className="mycontainer">
+			<div className="my-container">
 				<div>
 					<h3 className='question-text'> Do you live in an apartment complex/ city where there are many current wifi networks? [Frequency band question]
 					</h3>
 					<h2 className="subquestion-text"> This will help determine which frequency router you need 2.4GHz vs 5GHz. 
 					</h2>
  					<Link to="/DataTransferQuestion">
- 						<div className="answer-row">
-							<button className='radio' value="TRUE" onClick={this.handleOptionChange}>
+ 						<div className="row answer-row">
+							<button className='my-button' value="TRUE" onClick={this.handleOptionChange}>
 								Yes
 							</button>
-						</div>
-						<div>
-							<button className='radio' value="" onClick={this.handleOptionChange} >
+							<button className='my-button' value="" onClick={this.handleOptionChange} >
 								No
 							</button>
 						</div>
-						</Link>
-						<Link to="/ParentalQuestion">
-							<div>
-
-								<button className='radio' value=""  onClick={this.handleOptionChange} >
-									Back  
-								</button>
-							</div>
-						</Link>
+					</Link>
+					<Link to="/ParentalQuestion">
+						<div className='row answer-row' >
+							<button className="my-button my-big" onClick={this.props.removeProgress} >
+								Back  
+							</button>
+						</div>
+					</Link>
 					</div>
 				</div>	
 			)

@@ -25,27 +25,26 @@ class LanPortQuestion extends Component {
 	render () {
 		console.log("Price_question: ", this.props)
 		return (
-			<div className="mycontainer">
+			<div className="my-container">
 				<div>
-					<h3 className='question-text' id='footer' > Number of lan ports? [Lan Port question]
+					<h3 className='question-text'> Number of lan ports? [Lan Port question]
 					</h3>
 					<h2 className="subquestion-text"> How many devices do you plan to plug into the back of your router? Hint: it's always faster to do this.
 					</h2>
 					<Link to="/Results">
- 						<div>
-							<button className="radio" value="" onClick={this.handleOptionChange} >
+ 						<div className='row answer-row' >
+							<button className="my-button" value="" onClick={this.handleOptionChange} >
 								less than 4
 							</button>
-						</div>
-						<div >
-							<button className="radio" value=">4" onClick={this.handleOptionChange} >
+
+							<button className="my-button" value=">4" onClick={this.handleOptionChange} >
 								more than 4
 							</button>
 						</div>
 					</Link>
 					<Link to="/DataTransferQuestion">
-						<div >
-							<button className="radio" value="" onClick={this.handleOptionChange} >
+						<div className='row answer-row' >
+							<button className="my-button my-big" onClick={this.props.removeProgress} >
 								Back  
 							</button>
 						</div>
