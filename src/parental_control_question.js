@@ -32,7 +32,7 @@ class ParentalQuestion extends Component {
 				<h2 className="subquestion-text"> Some routers have a specialty in parental controls.
 				</h2>
 				<Link to="/FrequencyQuestion">
-					<div className='row answer-row' >
+					<div className='answer-row' >
 						<button className="my-button" value="TRUE" onClick={this.handleOptionChange}>
 							Yes
 						</button>
@@ -43,7 +43,7 @@ class ParentalQuestion extends Component {
 					</div>
 				</Link>
 				<Link to="/NumDevicesQuestion">
-					<div className='row answer-row' >
+					<div className='answer-row' >
 						<button className="my-button my-big" onClick={this.props.removeProgress} >
 							Back  
 						</button>

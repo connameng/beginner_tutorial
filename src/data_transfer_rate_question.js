@@ -34,7 +34,7 @@ class DataTransferQuestion extends Component {
 					</h2>
  						<Link to="/LanPortQuestion">
 
-	 						<div className='row answer-row'>
+	 						<div className='answer-row'>
 								<button className="my-button" value="1" onClick={this.handleOptionChange}>
 									Less than <br/> 100 Mbps
 								</button>
@@ -46,7 +46,7 @@ class DataTransferQuestion extends Component {
 
 						</Link>
 						<Link to="/FrequencyQuestion">
-							<div className='row answer-row' >
+							<div className='answer-row' >
 								<button className="my-button my-big" onClick={this.props.removeProgress} >
 									Back  
 								</button>

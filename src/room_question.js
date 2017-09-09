@@ -32,7 +32,7 @@ class RoomQuestion extends Component {
 					<h2 className="subquestion-text"> This will help determine the router range. Note: number of antennas does not correlate directly with range.
 					</h2>
    						<Link to="/NumDevicesQuestion">
-   							<div className="row answer-row">
+   							<div className="answer-row">
 
 								<button className="my-button" value="<4" onClick={this.handleOptionChange}>
 									Studio - <br/> 2 Bedroom
@@ -45,7 +45,7 @@ class RoomQuestion extends Component {
 						</Link>
 
 						<Link to="/">
-							<div className='row answer-row' >
+							<div className='answer-row' >
 								<button className="my-button my-big" onClick={this.props.removeProgress} >
 									Back  
 								</button>

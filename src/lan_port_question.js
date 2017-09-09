@@ -32,7 +32,7 @@ class LanPortQuestion extends Component {
 					<h2 className="subquestion-text"> How many devices do you plan to plug into the back of your router? Think TVs, game systems etc. <br/>Pro Tip: you'll always have faster speeds over a wire than wifi. 
 					</h2>
 					<Link to="/Results">
- 						<div className='row answer-row' >
+ 						<div className='answer-row' >
 							<button className="my-button" value="" onClick={this.handleOptionChange} >
 								Less than 4
 							</button>
@@ -43,7 +43,7 @@ class LanPortQuestion extends Component {
 						</div>
 					</Link>
 					<Link to="/DataTransferQuestion">
-						<div className='row answer-row' >
+						<div className='answer-row' >
 							<button className="my-button my-big" onClick={this.props.removeProgress} >
 								Back  
 							</button>

@@ -3451,6 +3451,8 @@
 .progress {
   display: block;
   clear: both;  
+  width: 75%;
+  margin-left: 12.5%;
 }
 .my-container {
   text-align: center;
@@ -3501,7 +3503,6 @@
   align-content: center;
   margin: 0;
   width: 100%;
-  padding-left: 33%;
 }
 
 .filter {
