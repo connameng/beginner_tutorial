@@ -33,6 +33,7 @@ class Questions extends Component {
     this.handleNumDevicesAnswer = this.handleNumDevicesAnswer.bind(this)
     this.addProgress = this.addProgress.bind(this)
     this.removeProgress = this.removeProgress.bind(this)
+    this.resetProgress = this.resetProgress.bind(this)
   }
 
   addProgress(){
@@ -44,6 +45,12 @@ class Questions extends Component {
   removeProgress(){
     let newProgressBar = this.state.progressBar
     newProgressBar -= 100/7
+    this.setState({progressBar:newProgressBar})
+  }
+
+  resetProgress(){
+    let newProgressBar = this.state.progressBar
+    newProgressBar = 1
     this.setState({progressBar:newProgressBar})
   }
 
@@ -126,7 +133,7 @@ class Questions extends Component {
               <Route exact path="/FrequencyQuestion" render={()=><FrequencyQuestion removeProgress={this.removeProgress} handleFrequencyAnswer={this.handleFrequencyAnswer}/>}/>
               <Route exact path="/DataTransferQuestion" render={()=><DataTransferQuestion removeProgress={this.removeProgress} handleDataTransferAnswer={this.handleDataTransferAnswer}/>}/>
               <Route exact path="/LanPortQuestion" render={()=><LanPortQuestion removeProgress={this.removeProgress} handleLanPortAnswer={this.handleLanPortAnswer}/>}/>
-              <Route exact path="/Results" render={()=><Results removeProgress={this.removeProgress} handleResultsPage={this.handleResultsPage}/>}/>
+              <Route exact path="/Results" render={()=><Results resetProgress={this.resetProgress} handleResultsPage={this.handleResultsPage}/>}/>
             </div>
           </BrowserRouter>
           <ProgressBar now={this.state.progressBar} />

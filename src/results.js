@@ -20,7 +20,7 @@ class Results extends Component {
  
 						<Link to="/FrequencyQuestion">
 							<div className='row answer-row' >
-								<button className="my-button my-big" onClick={this.props.removeProgress} >
+								<button className="my-button my-big" onClick={this.props.resetProgress} >
 									Back  
 								</button>
 							</div>
