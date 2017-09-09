@@ -124,7 +124,7 @@ class Questions extends Component {
     return (
       <div >
         <div className='col-md-6 little-space'>
-          <BrowserRouter className='row'>
+          <BrowserRouter>
             <div>
               <Route exact path="/" render={()=><PriceQuestion context={history} removeProgress={this.removeProgress} handlePriceAnswer={this.handlePriceAnswer}/>}/>
               <Route exact path="/RoomQuestion" render={()=><RoomQuestion removeProgress={this.removeProgress} handleRoomAnswer={this.handleRoomAnswer}/>}/>

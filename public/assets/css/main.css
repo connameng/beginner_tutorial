@@ -3457,6 +3457,7 @@
 .my-container {
   text-align: center;
   padding: 5%;
+  width: 100%;
 }
 .question-text {
   text-align: center;
@@ -3573,3 +3574,14 @@ transform: translateY(50%);} to { opacity:1; transform: translateY(0); }  }
 	padding: 5%;
 }
 
+#reset-margin {
+	margin: 0;
+}
+#root {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.my-p {
+	margin: 0 0 -1.5em 0;
+}

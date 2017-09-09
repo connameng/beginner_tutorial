@@ -3,26 +3,22 @@ var data = require('./public/routerdata.json')
 // console.log(data.routers)
 function createPermutation() {
 
-	var combos = util.product([100,150,200,1000], ['<4','>4'], ['TRUE', 'FALSE'], ['TRUE', 'FALSE'], [1,2], ['>=4', '<4'], ['TRUE', 'FALSE'])
+	var combos = util.product([100,150,200,1000], ['<4','>4'], ['TRUE', ''], ['TRUE', ''], [1,2], ['>4', ''], ['TRUE', ''])
 	console.log("Missing combos:")
-	var missingCombo = []
+	var counter = 0
 	for(let i = 0; i < combos.length; i++) {
-		// console.log(combos[i][1])
-
 
 		var filtered = data.routers
             .filter(router => {
               if(combos[i][1] === "<4"){
                   if(router['antennas'] <= 4) {
-                  return router 
+                  	return router 
                   }
                 }
                 if(combos[i][1] === ">4"){
                   if(router['antennas'] > 4 || router.mesh_network === "TRUE") {
-                return router 
-                 }
-                //   } else {
-                // return router 
+	                return router 
+	                 }
                   }
                 })
             .filter(router => {
@@ -57,11 +53,11 @@ function createPermutation() {
             })
             .filter(router => router['MU-MIMO (number of devices)'].indexOf(combos[i][6]) >= 0)
 
-            if(filtered.length < 1) {
+            if(filtered.length === 0) {
+            	counter += 1
             	console.log(combos[i])
             }
-
 	}
-	// console.log(data.routers.length)
+	console.log(counter)
 }
 createPermutation()

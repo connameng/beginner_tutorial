@@ -53,7 +53,7 @@ class PriceQuestion extends Component {
 							</button>
 
 							<button className="my-button"  value="anyprice" onClick={this.handleOptionChange}>
-								Just get me the <br/>best! 
+								<p className='my-p'>Just get me the <br/>best! </p>
 							</button>
 
 						</div>
