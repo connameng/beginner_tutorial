@@ -35,7 +35,7 @@ class RoomQuestion extends Component {
    							<div className="row answer-row">
 
 								<button className="my-button" value="<4" onClick={this.handleOptionChange}>
-									Studio - 2 Bedroom
+									Studio - <br/> 2 Bedroom
 								</button>
 
 								<button className="my-button" value=">4" onClick={this.handleOptionChange} >

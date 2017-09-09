@@ -36,11 +36,11 @@ class DataTransferQuestion extends Component {
 
 	 						<div className='row answer-row'>
 								<button className="my-button" value="1" onClick={this.handleOptionChange}>
-									Less than 100 Mbps
+									Less than <br/> 100 Mbps
 								</button>
 
 								<button className="my-button" value="2"  onClick={this.handleOptionChange} >
-									Greater than 100 Mbps
+									More than <br/> 100 Mbps 
 								</button>
 							</div>
 

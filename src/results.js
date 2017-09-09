@@ -1,16 +1,31 @@
 
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import "../public/assets/css/main.css" ; 
 
 class Results extends Component {
   render() {
     return (
-    <div className="my-container">
-				<div>
-					<h3 className='question-text'> Based on your answers, here are your reccomended routers 
+			<div className="my-container">
+				<div> <i class="fa fa-trophy" aria-hidden="true"></i>
+					<h3 className='question-text'> Congrats! <br/>Here are your reccomended routers <i class="fa fa-trophy" aria-hidden="true"></i>
 					</h3>
-					<h2 className="subquestion-text"> Note: 1) If you do not see any routers, you will need a higher price point for the features you need. Link to price question button again. 2) If you still have a handful to choose from, consider the router warranty and support. Link to Customer Support table to show differences. 
+					<h2 className="subquestion-text"> 
+						<ol>
+							<li> If you still have a handful to choose from, consider the router warranty and support. Link to Customer Support table to show differences. </li>
+							<li> If you do not see any routers, you will need a higher price point for the features you need.  					
+								</li> 
+						</ol>
 					</h2>
-				</div>	
+ 
+						<Link to="/FrequencyQuestion">
+							<div className='row answer-row' >
+								<button className="my-button my-big" onClick={this.props.removeProgress} >
+									Back  
+								</button>
+							</div>
+						</Link>
+					</div>
 			</div>
     );
   }
