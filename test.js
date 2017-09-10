@@ -10,18 +10,6 @@ function createPermutation() {
 
 		var filtered = data.routers
             .filter(router => {
-              if(combos[i][1] === "<4"){
-                  if(router['antennas'] <= 4) {
-                  	return router 
-                  }
-                }
-                if(combos[i][1] === ">4"){
-                  if(router['antennas'] > 4 || router.mesh_network === "TRUE") {
-	                return router 
-	                 }
-                  }
-                })
-            .filter(router => {
               if(combos[i][0] === 100){
                 if(router['price ($)'] <= 100) {
                   return router 
@@ -39,6 +27,19 @@ function createPermutation() {
                   return router 
               }
              })
+            .filter(router => {
+              if(combos[i][1] === "<4"){
+                  if(router['antennas'] <= 4) {
+                  	return router 
+                  }
+                }
+                if(combos[i][1] === ">4"){
+                  if(router['antennas'] > 4 || router.mesh_network === "TRUE") {
+	                return router 
+	                 }
+                  }
+                })
+            .filter(router => router['MU-MIMO (number of devices)'].indexOf(combos[i][6]) >= 0)
             .filter(router => router['parent_control_specialty'].indexOf(combos[i][2]) >= 0)
             .filter(router => router['5ghz frequency'].indexOf(combos[i][3]) >= 0)
             .filter(router => router['data_transfer_value (1=<1300; 2>1300 mbps)'].indexOf(combos[i][4]) >= 0)
@@ -51,7 +52,6 @@ function createPermutation() {
                 return router
               }
             })
-            .filter(router => router['MU-MIMO (number of devices)'].indexOf(combos[i][6]) >= 0)
 
             if(filtered.length === 0) {
             	counter += 1

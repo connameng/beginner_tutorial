@@ -61,21 +61,7 @@ class Routers extends Component {
         </div>
           <div className="search">
           {preload.routers
-            .filter(router => {
-              if(antennaAnswer === "<4"){
-                  if(router['antennas'] <= 4) {
-                  return router 
-                  }
-                }
-                if(antennaAnswer === ">4"){
-                  if(router['antennas'] > 4 || router.mesh_network === "TRUE") {
-                return router 
-                 }
-                  } else {
-                return router 
-                  }
-                })
-            .filter(router => {
+             .filter(router => {
               if(priceAnswer === "<100"){
                 if(router['price ($)'] <= 100) {
                   return router 
@@ -93,6 +79,21 @@ class Routers extends Component {
                 return router 
               }
              })
+             .filter(router => {
+              if(antennaAnswer === "<4"){
+                  if(router['antennas'] <= 4) {
+                  return router 
+                  }
+                }
+                if(antennaAnswer === ">4"){
+                  if(router['antennas'] > 4 || router.mesh_network === "TRUE") {
+                return router 
+                 }
+                  } else {
+                return router 
+                  }
+                })
+            .filter(router => router['MU-MIMO (number of devices)'].indexOf(NumDevicesAnswer) >= 0)
             .filter(router => router['parent_control_specialty'].indexOf(parentalAnswer) >= 0)
             .filter(router => router['5ghz frequency'].indexOf(frequencyAnswer) >= 0)
             .filter(router => router['data_transfer_value (1=<1300; 2>1300 mbps)'].indexOf(dataTransferAnswer) >= 0)
@@ -104,9 +105,7 @@ class Routers extends Component {
                } else {
                 return router
               }
-            })
-            .filter(router => router['MU-MIMO (number of devices)'].indexOf(NumDevicesAnswer) >= 0)
-            .map( router => <ShowCard key={router.ASIN} {...router}/>)
+            }).map( router => <ShowCard key={router.ASIN} {...router}/>)
           }
           </div>
     </div>
