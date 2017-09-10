@@ -27,9 +27,9 @@ class LanPortQuestion extends Component {
 		return (
 			<div className="my-container">
 				<div>
-					<h3 className='question-text'>How many LAN ports do you need?
+					<h3 className='question-text'> Number of lan ports? [Lan Port question]
 					</h3>
-					<h2 className="subquestion-text">A LAN (Local Area Network) port is the wired cable plugged internet devices. Think: TVs, game systems etc. <br/>Pro Tip: you'll always have faster speeds over a wire than wifi. Try plugging in devices whenever you can.
+					<h2 className="subquestion-text"> How many devices do you plan to plug into the back of your router? Think TVs, game systems etc. <br/>Pro Tip: you'll always have faster speeds over a wire than wifi. 
 					</h2>
 					<Link to="/Results">
  						<div className='answer-row' >

@@ -30,9 +30,9 @@ class PriceQuestion extends Component {
 
 			<div className="my-container">
 				<div>
-   					<h3 className='question-text'>How much would you like to spend? 
+   					<h3 className='question-text'> How much would you like to spend? 
 					</h3>
-					<h2 className="subquestion-text">I know... first question about money. It's important to think about your maximum budget before looking at different features. <br/>Note: if you do not see any routers, please turn off your add blocker. Also, you might need to pay more if you require more features.
+					<h2 className="subquestion-text"> This is your maximum budget you’d like to spend, an important thing to set first before looking at different features. Note: if you do not see any routers, please turn off your add blocker. Also, you might need to pay more if you require more features.
 					</h2>
    					<Link to="/RoomQuestion">
    						<div className='answer-row'>

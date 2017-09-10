@@ -27,7 +27,7 @@ class FrequencyQuestion extends Component {
 
 			<div className="my-container">
 				<div>
-					<h3 className='question-text'>Do you live in an apartment complex/ city where there are many current wifi networks?
+					<h3 className='question-text'> Do you live in an apartment complex/ city where there are many current wifi networks? [Frequency band question]
 					</h3>
 					<h2 className="subquestion-text"> This will help determine which frequency router you need 2.4GHz vs 5GHz. 
 					</h2>
