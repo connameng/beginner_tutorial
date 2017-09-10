@@ -1,21 +1,16 @@
 // const {string} = React.PropTypes
 import React, { Component } from 'react'
-import Iframe from 'react-iframe'
 	
 class ShowCard extends Component {
 
  render () {
   const { iframe_url } = this.props
     return (
-      <div >
-          <Iframe url={iframe_url}
-		      width="120px"
+      <div className="my-iframe col-md-2">
+          <iframe src={iframe_url}
+		      width="140px"
 		      height="200px"
-		      display="initial"
-		      position="relative"
 		      scrolling="no"
-		      frameborder="0"
-		      styles={{float: "left"}}
 		   />
       </div>
     )
