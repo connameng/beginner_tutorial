@@ -27,9 +27,9 @@ class RoomQuestion extends Component {
 			
 			<div className="my-container">
 				<div>
-   					<h3 className='question-text'> How many rooms is your home/ apartment? [Range/ antenna question]
+   					<h3 className='question-text'>How many bedrooms are there in your home or apartment?
 					</h3>
-					<h2 className="subquestion-text"> This will help determine the router range. Note: number of antennas does not correlate directly with range.
+					<h2 className="subquestion-text"> This will help determine the type of router and wirelss signal range needed. Note: the number of antennas does not necessarily mean longer range.
 					</h2>
    						<Link to="/NumDevicesQuestion">
    							<div className="answer-row">

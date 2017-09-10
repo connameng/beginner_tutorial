@@ -27,9 +27,9 @@ class NumDevicesQuestion extends Component {
 		return (
 			<div className="my-container">
 				<div>
-					<h3 className='question-text'> How many devices do you have on the network? (laptops/gaming systems/cell phones/ TVs etc.) [MIMO question] 
+					<h3 className='question-text'>How many devices will be connected to the wireless internet?
 					</h3>
-					<h2 className="subquestion-text"> There's a feature called MIMO that is a great technology which helps with multiple devices. 
+					<h2 className="subquestion-text">Think of how many devices (laptops, gaming systems, cell phones/ TVs etc.) that will be connected to your wireless network. Informative: There's a great technology called MIMO that helps with multiple devices on the same network.
 					</h2>
 					<Link to="/ParentalQuestion">
  						<div className='answer-row' >

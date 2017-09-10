@@ -27,28 +27,30 @@ class ParentalQuestion extends Component {
 		console.log("Parental_question: ", this.props)
 		return (
 			<div className="my-container">
-				<h3 className='question-text'> Are you a parent and want to be able to filter/restrict activity on the internet (set up time windows or restricted sites) [Parental controls]
-				</h3>
-				<h2 className="subquestion-text"> Some routers have a specialty in parental controls.
-				</h2>
-				<Link to="/FrequencyQuestion">
-					<div className='answer-row' >
-						<button className="my-button" value="TRUE" onClick={this.handleOptionChange}>
-							Yes
-						</button>
+				<div>
+					<h3 className='question-text'>Are you a parent or do you want the ability to filter and restrict activity on the internet?
+					</h3>
+					<h2 className="subquestion-text">Some routers specialize in parental controls which allow you to specify restrictions that limit the hours of a day certain devices can connect to the internet as well as restric certain websites. Very useful for parents! 
+					</h2>
+					<Link to="/FrequencyQuestion">
+						<div className='answer-row' >
+							<button className="my-button" value="TRUE" onClick={this.handleOptionChange}>
+								Yes
+							</button>
 
-						<button className="my-button" value="" onClick={this.handleOptionChange} >
-							No
-						</button>
-					</div>
-				</Link>
-				<Link to="/NumDevicesQuestion">
-					<div className='answer-row' >
-						<button className="my-button my-big" onClick={this.props.removeProgress} >
-							Back  
-						</button>
-					</div>
-				</Link>
+							<button className="my-button" value="" onClick={this.handleOptionChange} >
+								No
+							</button>
+						</div>
+					</Link>
+					<Link to="/NumDevicesQuestion">
+						<div className='answer-row' >
+							<button className="my-button my-big" onClick={this.props.removeProgress} >
+								Back  
+							</button>
+						</div>
+					</Link>
+				</div>
 			</div>
 			)
 		}

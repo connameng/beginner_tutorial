@@ -8,7 +8,9 @@ class Results extends Component {
     return (
 			<div className="my-container">
 				<div> 
-					<h3 className='question-text'> Congrats! <br/>Here are your reccomended routers 
+					<h3 className='question-text'>Congrats! <br/>Here are your reccomended routers 
+					<img scr="../public/images/party.png"/>
+					<img scr="../public/images/party1.png"/>
 					</h3>
 					<h2 className="subquestion-text"> 
 						<ol>
@@ -17,10 +19,10 @@ class Results extends Component {
 								</li> 
 						</ol>
 					</h2>
-						<Link to="/FrequencyQuestion">
+						<Link to="/">
 							<div className='answer-row' >
-								<button className="my-button my-big" onClick={this.props.resetProgress} >
-									Back  
+								<button className="button small" onClick={this.props.resetProgress} >
+									One more time  
 								</button>
 							</div>
 						</Link>

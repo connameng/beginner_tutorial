@@ -10,13 +10,13 @@ class ShowCard extends Component {
       <div >
           <Iframe url={iframe_url}
 		      width="120px"
-		      height="240px"
+		      height="200px"
 		      display="initial"
 		      position="relative"
 		      scrolling="no"
 		      frameborder="0"
 		      styles={{float: "left"}}
-	      />
+		   />
       </div>
     )
   }

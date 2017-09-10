@@ -28,9 +28,9 @@ class DataTransferQuestion extends Component {
 		return (
 			<div className="my-container">
 				<div>
-					<h3 className="question-text"> How fast is the theoretical Download/Upload speed on your internet service provider plan? [Data transfer rate question]
+					<h3 className="question-text">How fast is the theoretical download speed on your internet service provider plan?
  					</h3>
- 					<h2 className="subquestion-text"> This is your maximum budget you’d like to spend, an important thing to set first before looking at different features. Note: if you do not see any routers, please turn off your add blocker. Also, you might need to pay more if you require more features.
+ 					<h2 className="subquestion-text">This is whatever internet speed you are paying for to the internet service provider. Mbps = Megabits per second.  
 					</h2>
  						<Link to="/LanPortQuestion">
 

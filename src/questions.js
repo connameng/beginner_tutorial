@@ -139,7 +139,7 @@ class Questions extends Component {
           <ProgressBar now={this.state.progressBar} />
         </div>
 
-        <div className='col-md-6'>
+        <div className='col-md-6 little-space'>
           <Routers userAnswers={this.state.allAnswers} />
        </div>
       </div>
