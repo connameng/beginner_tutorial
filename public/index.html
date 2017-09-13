@@ -68,12 +68,16 @@
         <div class="container">
           <header class="major">
             <h2>If you found this helpful - please share!</h2>
-               <ul class="icons">
-                <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+               <ul class="icons my-ul">
+                <li><a href="https://twitter.com/intent/tweet" class="icon alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.wifiroutersolutions.com%2F&amp;src=sdkpreparse" class="icon alt fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
               </ul> 
           </header>
-          <p">Please send feedback <a id="emailMe" href="mailto:wifirouterselector@gmail.com"> here </a><a id="emailMe" href="mailto:wifirouterselector@gmail.com" class="icon alt fa-envelope"><span class="label">Email</span></a></p>
+          <a id="emailMe" href="mailto:wifirouterselector@gmail.com">
+            <p">Please send feedback
+              <span class="icon alt fa-envelope" class="label"></span>
+            </p>
+          </a>
         </div>
       </section>
 
@@ -92,7 +96,15 @@
       <script src="assets/js/util.js"></script>
       <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
       <script src="assets/js/main.js"></script>
-
+      <script type="text/javascript">
+        $(window).scroll(function() {
+          if ($(window).scrollTop() > 100) {
+            $(".my-share").show()
+          } else {
+            $(".my-share").hide()
+          }
+        })
+    </script>
   </body>
 </html>
 
