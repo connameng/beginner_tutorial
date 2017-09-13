@@ -1,12 +1,27 @@
 {
-  "name": "intro-to-webdev-app",
-  "version": "0.0.0",
-  "description": "Intro to Web Dev app for Frontend Masters",
-  "main": "app.js",
-  "author": "Brian Holt <bri@nho.lt>",
-  "license": "MIT",
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "express": "~4.6.0",
-    "body-parser": "~1.4.3"
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.2.0",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.1",
+    "react-dom": "^15.6.1",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "react-share": "^1.16.0",
+    "survey-react": "^0.12.15"
+  },
+  "devDependencies": {
+    "react-scripts": "0.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
